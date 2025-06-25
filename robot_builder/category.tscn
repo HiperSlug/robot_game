@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://bberbbgooj7wy"]
+
+[ext_resource type="Script" uid="uid://hi4pgs4xpxvk" path="res://robot_builder/category.gd" id="1_a34dy"]
+
+[node name="Category" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a34dy")
+metadata/_tab_index = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+text = "TITLE"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2"]
+layout_mode = 2

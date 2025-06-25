@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1vpmcgo1ejed"]
+
+[ext_resource type="Script" uid="uid://66qxjihhlh4i" path="res://robot_builder/component_button.gd" id="1_jx0l3"]
+
+[node name="ComponentButton" type="CheckButton"]
+text = "2 EZ"
+script = ExtResource("1_jx0l3")

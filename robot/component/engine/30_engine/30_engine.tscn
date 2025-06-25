@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpos3dk1ekgw5"]
+
+[ext_resource type="PackedScene" uid="uid://1kpdgx0q2mdr" path="res://robot/component/engine/base_engine_comp.tscn" id="1_yb2rm"]
+
+[node name="30Engine" instance=ExtResource("1_yb2rm")]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://pt7bf7n763eq"]
+
+[ext_resource type="PackedScene" uid="uid://dw7r3dxftykog" path="res://robot/component/health/base_health_comp.tscn" id="1_2x8fk"]
+
+[node name="10Health" instance=ExtResource("1_2x8fk")]

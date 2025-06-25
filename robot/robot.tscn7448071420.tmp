@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgshd0rrowooc"]
+
+[ext_resource type="PackedScene" uid="uid://davtcs40pd0j1" path="res://assets/Barbarian.glb" id="1_2tdfi"]
+[ext_resource type="Script" uid="uid://rdts6sla3evt" path="res://robot/robot.gd" id="1_dsigu"]
+[ext_resource type="PackedScene" uid="uid://dw7r3dxftykog" path="res://robot/health_comp.tscn" id="3_dsigu"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_cvgo2"]
+
+[node name="Robot" type="CharacterBody3D"]
+script = ExtResource("1_dsigu")
+
+[node name="Barbarian" parent="." instance=ExtResource("1_2tdfi")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_cvgo2")
+
+[node name="Health" parent="." instance=ExtResource("3_dsigu")]
