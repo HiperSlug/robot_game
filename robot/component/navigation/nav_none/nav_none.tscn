@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cahct73xradnw"]
+
+[ext_resource type="PackedScene" uid="uid://dfc5y02nvhsbl" path="res://robot/component/navigation/base_navigation_comp.tscn" id="1_botko"]
+
+[node name="NavComp" instance=ExtResource("1_botko")]

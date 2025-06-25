@@ -25,22 +25,18 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 			stop_receiving()
 
 
-var is_receiving: bool = false
+var is_receiving: bool = true
 func start_receiving() -> void:
 	is_receiving = true
 	if nav:
-		nav.set_disabled(true)
+		nav.start_override(_direction)
 
 func stop_receiving() -> void:
 	is_receiving = false
 	if nav:
-		nav.set_disabled(false)
+		nav.stop_override()
 
-func _process(_delta: float) -> void:
-	if not is_receiving:
-		return
-	
+
+func _direction() -> Vector2:
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	if engine:
-		robot.velocity = input_dir * engine.speed
-		robot.move_and_slide()
+	return input_dir
