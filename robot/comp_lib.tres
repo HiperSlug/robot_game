@@ -1,13 +1,14 @@
-[gd_resource type="Resource" script_class="ComponentLibrary" load_steps=15 format=3 uid="uid://cs7w1blbtwnqs"]
+[gd_resource type="Resource" script_class="ComponentLibrary" load_steps=17 format=3 uid="uid://cs7w1blbtwnqs"]
 
 [ext_resource type="Script" uid="uid://cj23mvreov1u7" path="res://robot/component/component.gd" id="1_fi3bn"]
 [ext_resource type="PackedScene" uid="uid://dr1wgxbj52ouy" path="res://robot/component/sensor/camera/360_degrees/360_degrees.tscn" id="2_bu7ao"]
 [ext_resource type="PackedScene" uid="uid://7uqojmqet0ip" path="res://robot/component/sensor/camera/180_degrees/180_degrees.tscn" id="3_tjgi5"]
 [ext_resource type="PackedScene" uid="uid://7v6atjoinx2s" path="res://robot/component/communication/sensor_emitter/sensor_emitter.tscn" id="4_tjgi5"]
 [ext_resource type="PackedScene" uid="uid://pt7bf7n763eq" path="res://robot/component/health/10_health/10_health.tscn" id="5_xjdr3"]
-[ext_resource type="PackedScene" uid="uid://dfc5y02nvhsbl" path="res://robot/component/navigation/base_navigation_comp.tscn" id="6_7dhi4"]
+[ext_resource type="PackedScene" uid="uid://b20xapayygwnr" path="res://robot/component/navigation/nav_straight/nav_straight.tscn" id="6_tjgi5"]
 [ext_resource type="Script" uid="uid://cooiktvds5ujg" path="res://robot/component/component_library.gd" id="7_ktnt7"]
-[ext_resource type="PackedScene" uid="uid://1kpdgx0q2mdr" path="res://robot/component/engine/base_engine_comp.tscn" id="7_wxdsy"]
+[ext_resource type="PackedScene" uid="uid://cpos3dk1ekgw5" path="res://robot/component/engine/30_engine/30_engine.tscn" id="7_xjdr3"]
+[ext_resource type="PackedScene" uid="uid://5lhep0u7oesx" path="res://robot/component/communication/nav_receiver/nav_receiver.tscn" id="8_tjgi5"]
 
 [sub_resource type="Resource" id="Resource_oyqv5"]
 resource_name = "360 Degree Camera"
@@ -42,22 +43,30 @@ category = 0
 metadata/_custom_type_script = "uid://cj23mvreov1u7"
 
 [sub_resource type="Resource" id="Resource_hntei"]
-resource_name = "navigation"
+resource_name = "Nav Straight"
 script = ExtResource("1_fi3bn")
-name = &"navigation"
-scene = ExtResource("6_7dhi4")
+name = &"Nav Straight"
+scene = ExtResource("6_tjgi5")
 category = 2
 metadata/_custom_type_script = "uid://cj23mvreov1u7"
 
 [sub_resource type="Resource" id="Resource_ac475"]
-resource_name = "speed"
+resource_name = "Engine"
 script = ExtResource("1_fi3bn")
-name = &"speed"
-scene = ExtResource("7_wxdsy")
+name = &"Engine"
+scene = ExtResource("7_xjdr3")
 category = 1
+metadata/_custom_type_script = "uid://cj23mvreov1u7"
+
+[sub_resource type="Resource" id="Resource_7dhi4"]
+resource_name = "NavReceiver"
+script = ExtResource("1_fi3bn")
+name = &"NavReceiver"
+scene = ExtResource("8_tjgi5")
+category = 3
 metadata/_custom_type_script = "uid://cj23mvreov1u7"
 
 [resource]
 script = ExtResource("7_ktnt7")
-components = Array[ExtResource("1_fi3bn")]([SubResource("Resource_oyqv5"), SubResource("Resource_xjdr3"), SubResource("Resource_oj2or"), SubResource("Resource_o38ay"), SubResource("Resource_hntei"), SubResource("Resource_ac475")])
+components = Array[ExtResource("1_fi3bn")]([SubResource("Resource_oyqv5"), SubResource("Resource_xjdr3"), SubResource("Resource_oj2or"), SubResource("Resource_o38ay"), SubResource("Resource_hntei"), SubResource("Resource_ac475"), SubResource("Resource_7dhi4")])
 metadata/_custom_type_script = "uid://cooiktvds5ujg"

@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://c76oxorxuuuyw" path="res://robot/component/engine/base_engine_comp.gd" id="1_8tetb"]
 
-[node name="SpeedComp" type="Node"]
+[node name="SpeedComp" type="Node" groups=["engine_comp"]]
 script = ExtResource("1_8tetb")

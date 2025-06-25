@@ -10,3 +10,4 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="RobotBuilder" parent="CanvasLayer" instance=ExtResource("2_pjrb6")]
+mouse_filter = 2
