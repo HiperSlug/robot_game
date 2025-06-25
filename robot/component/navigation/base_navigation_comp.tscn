@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfc5y02nvhsbl"]
 
 [ext_resource type="Script" uid="uid://bptkhx5if727m" path="res://robot/component/navigation/base_navigation_comp.gd" id="1_l72il"]
-[ext_resource type="PackedScene" uid="uid://w4ost6rfsmwv" path="res://robot/component/comp_base/comp_base.tscn" id="2_t3a45"]
+[ext_resource type="PackedScene" uid="uid://w4ost6rfsmwv" path="res://robot/component/comp_base.tscn" id="2_t3a45"]
 
 [node name="NavComp" type="Node" groups=["nav_comp"]]
 script = ExtResource("1_l72il")

@@ -1,13 +1,20 @@
-extends BaseAttackComp
-class_name LaserComp
+extends Node2D
+class_name Laser
 
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
-@onready var remote_transform_2d: RemoteTransform2D = $RemoteTransform2D
+@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var collision_shape_2d: CollisionShape2D = $Hitbox/CollisionShape2D
+
 
 func _process(_delta: float) -> void:
 	var length := get_length()
-	remote_transform_2d.position.y = - length / 2
-	remote_transform_2d.scale.y = (length / 8)
+	
+	sprite_2d.region_rect.size.y = length
+	sprite_2d.position.y = length / 2
+	
+	collision_shape_2d.shape.size.y = length
+	collision_shape_2d.position.y = length / 2
+
 
 func get_length() -> float:
 	return (global_position - get_global_raycast_point()).length()

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bga7khvnuvt2e"]
+
+[ext_resource type="Script" uid="uid://c76oxorxuuuyw" path="res://robot/component/engine/engine_comp.gd" id="1_0eb6c"]
+
+[node name="EngineT1" type="Node"]
+script = ExtResource("1_0eb6c")
+speed = 50.0

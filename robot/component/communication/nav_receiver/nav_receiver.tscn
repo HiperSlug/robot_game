@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://5lhep0u7oesx"]
 
 [ext_resource type="Script" uid="uid://v5q6ic4tp50m" path="res://robot/component/communication/nav_receiver/nav_receiver.gd" id="1_ra27e"]
-[ext_resource type="PackedScene" uid="uid://w4ost6rfsmwv" path="res://robot/component/comp_base/comp_base.tscn" id="2_8pcsr"]
+[ext_resource type="PackedScene" uid="uid://w4ost6rfsmwv" path="res://robot/component/comp_base.tscn" id="2_8pcsr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8pcsr"]
 

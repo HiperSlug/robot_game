@@ -1,18 +1,18 @@
 [gd_resource type="Resource" script_class="ComponentLibrary" load_steps=25 format=3 uid="uid://cs7w1blbtwnqs"]
 
-[ext_resource type="Script" uid="uid://cj23mvreov1u7" path="res://robot/component/component.gd" id="1_fi3bn"]
+[ext_resource type="Script" uid="uid://cj23mvreov1u7" path="res://robot_builder/lib/component.gd" id="1_fi3bn"]
 [ext_resource type="PackedScene" uid="uid://dr1wgxbj52ouy" path="res://robot/component/sensor/camera/360_degrees/360_degrees.tscn" id="2_bu7ao"]
 [ext_resource type="PackedScene" uid="uid://7uqojmqet0ip" path="res://robot/component/sensor/camera/180_degrees/180_degrees.tscn" id="3_tjgi5"]
 [ext_resource type="PackedScene" uid="uid://7v6atjoinx2s" path="res://robot/component/communication/sensor_emitter/sensor_emitter.tscn" id="4_tjgi5"]
-[ext_resource type="PackedScene" uid="uid://pt7bf7n763eq" path="res://robot/component/health/10_health/10_health.tscn" id="5_xjdr3"]
+[ext_resource type="PackedScene" path="res://robot/component/health/10_health/10_health.tscn" id="5_xjdr3"]
 [ext_resource type="PackedScene" uid="uid://b20xapayygwnr" path="res://robot/component/navigation/nav_straight/nav_straight.tscn" id="6_tjgi5"]
-[ext_resource type="Script" uid="uid://cooiktvds5ujg" path="res://robot/component/component_library.gd" id="7_ktnt7"]
-[ext_resource type="PackedScene" uid="uid://cpos3dk1ekgw5" path="res://robot/component/engine/30_engine/30_engine.tscn" id="7_xjdr3"]
+[ext_resource type="Script" uid="uid://cooiktvds5ujg" path="res://robot_builder/lib/component_library.gd" id="7_ktnt7"]
+[ext_resource type="PackedScene" path="res://robot/component/engine/30_engine/30_engine.tscn" id="7_xjdr3"]
 [ext_resource type="PackedScene" uid="uid://5lhep0u7oesx" path="res://robot/component/communication/nav_receiver/nav_receiver.tscn" id="8_tjgi5"]
 [ext_resource type="PackedScene" uid="uid://bcytf4knpeloh" path="res://robot/component/communication/action_emitter/action_emitter.tscn" id="9_7dhi4"]
 [ext_resource type="PackedScene" uid="uid://chmaxn1wk2i4x" path="res://robot/component/communication/action_receiver/action_receiver.tscn" id="10_wxdsy"]
 [ext_resource type="PackedScene" uid="uid://cahct73xradnw" path="res://robot/component/navigation/nav_none/nav_none.tscn" id="11_wxdsy"]
-[ext_resource type="PackedScene" uid="uid://chknskn71pcvk" path="res://robot/component/attack/laser/laser.tscn" id="12_ktnt7"]
+[ext_resource type="PackedScene" uid="uid://cvvwiuitd4env" path="res://robot/component/damage/weapon/laser/laser.tscn" id="12_ktnt7"]
 
 [sub_resource type="Resource" id="Resource_oyqv5"]
 resource_name = "360 Degree Camera"

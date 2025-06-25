@@ -27,13 +27,10 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 visibility_manager=""
 world=""
+nav_comp=""
 communication_comp=""
 camera_comp=""
-health_comp=""
-nav_comp=""
-engine_comp=""
-attack_comp=""
-hurtbox_comp=""
+component=""
 
 [gui]
 
