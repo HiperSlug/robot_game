@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://7v6atjoinx2s"]
-
-[ext_resource type="Script" uid="uid://dk8gei3pddn52" path="res://robot/component/communication/sensor_emitter/sensor_emitter.gd" id="1_hu1v4"]
-[ext_resource type="PackedScene" uid="uid://w4ost6rfsmwv" path="res://robot/component/comp_base.tscn" id="2_hu1v4"]
-
-[node name="SensorEmitter" type="Node" groups=["communication_comp"]]
-script = ExtResource("1_hu1v4")
-
-[node name="CompBase" parent="." instance=ExtResource("2_hu1v4")]

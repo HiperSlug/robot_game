@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu4kxyqli2qcs"]
+
+[ext_resource type="Script" uid="uid://jgp7ovcka8yw" path="res://robot/components/navigation/nav_forward_comp.gd" id="1_nyjm3"]
+
+[node name="NavForwardComp" type="Node"]
+script = ExtResource("1_nyjm3")

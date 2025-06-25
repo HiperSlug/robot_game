@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvvwiuitd4env"]
+
+[ext_resource type="PackedScene" uid="uid://bts08ovrowwqq" path="res://robot/components/damage/weapon/hitbox.tscn" id="1_k3bq0"]
+[ext_resource type="Script" uid="uid://8w2pf42gyh25" path="res://robot/components/damage/weapon/laser/laser.gd" id="1_rtor7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3bq0"]
+size = Vector2(4, 33)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_k3bq0"]
+
+[node name="Laser" type="Node2D" groups=["component", "weapon_comp"]]
+script = ExtResource("1_rtor7")
+
+[node name="Hitbox" parent="." instance=ExtResource("1_k3bq0")]
+dps = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -16.5)
+shape = SubResource("RectangleShape2D_k3bq0")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, -200)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(0, -16.5)
+texture = SubResource("PlaceholderTexture2D_k3bq0")
+region_enabled = true
+region_rect = Rect2(0, 0, 4, 33)

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cugedw3rnxl37"]
+
+[ext_resource type="Script" uid="uid://18616pwfej21" path="res://robot/components/navigation/nav_handler/nav_handler_comp.gd" id="1_k1wwh"]
+[ext_resource type="PackedScene" uid="uid://w4ost6rfsmwv" path="res://robot/components/comp_base.tscn" id="2_g8e4m"]
+
+[node name="NavHandler" type="Node" groups=["component", "nav_handler_comp"]]
+script = ExtResource("1_k1wwh")
+
+[node name="CompBase" parent="." instance=ExtResource("2_g8e4m")]

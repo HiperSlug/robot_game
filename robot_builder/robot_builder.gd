@@ -1,7 +1,7 @@
 extends Control
 class_name RobotBuilder
 
-const COMP_LIB = preload("res://robot/comp_lib.tres")
+const COMP_LIB = preload("res://robot_builder/lib/comp_lib.tres")
 const CATEGORY = preload("res://robot_builder/category.tscn")
 @onready var v_box_container: VBoxContainer = $HSplitContainer/PanelContainer2/VBoxContainer/VBoxContainer
 var category_nodes: Dictionary[Category.CATEGORIES, Category] = {}
