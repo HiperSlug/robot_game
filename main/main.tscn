@@ -22,6 +22,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 stretch = true
+mouse_target = true
 
 [node name="SubViewport" type="SubViewport" parent="CanvasLayer/HBoxContainer/PanelContainer/SubViewportContainer"]
 disable_3d = true
