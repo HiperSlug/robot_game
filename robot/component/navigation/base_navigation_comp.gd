@@ -22,13 +22,10 @@ func _physics_process(_delta: float) -> void:
 	
 	var dir := get_direction()
 	
-	direction.emit(dir)
-	
 	if engine:
 		robot.velocity = dir * engine.speed
 
 
-signal direction(dir: Vector2)
 
 # override
 func _direction() -> Vector2:

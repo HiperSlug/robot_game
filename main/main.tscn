@@ -13,20 +13,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/HBoxContainer/PanelContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 stretch = true
-mouse_target = true
 
 [node name="SubViewport" type="SubViewport" parent="CanvasLayer/HBoxContainer/PanelContainer/SubViewportContainer"]
 disable_3d = true
 handle_input_locally = false
+physics_object_picking = true
 size = Vector2i(2, 2)
 render_target_update_mode = 4
 
@@ -35,3 +37,4 @@ render_target_update_mode = 4
 [node name="RobotBuilder" parent="CanvasLayer/HBoxContainer" instance=ExtResource("2_pjrb6")]
 layout_mode = 2
 size_flags_horizontal = 1
+mouse_filter = 2

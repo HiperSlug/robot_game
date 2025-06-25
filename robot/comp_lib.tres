@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ComponentLibrary" load_steps=23 format=3 uid="uid://cs7w1blbtwnqs"]
+[gd_resource type="Resource" script_class="ComponentLibrary" load_steps=25 format=3 uid="uid://cs7w1blbtwnqs"]
 
 [ext_resource type="Script" uid="uid://cj23mvreov1u7" path="res://robot/component/component.gd" id="1_fi3bn"]
 [ext_resource type="PackedScene" uid="uid://dr1wgxbj52ouy" path="res://robot/component/sensor/camera/360_degrees/360_degrees.tscn" id="2_bu7ao"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bcytf4knpeloh" path="res://robot/component/communication/action_emitter/action_emitter.tscn" id="9_7dhi4"]
 [ext_resource type="PackedScene" uid="uid://chmaxn1wk2i4x" path="res://robot/component/communication/action_receiver/action_receiver.tscn" id="10_wxdsy"]
 [ext_resource type="PackedScene" uid="uid://cahct73xradnw" path="res://robot/component/navigation/nav_none/nav_none.tscn" id="11_wxdsy"]
+[ext_resource type="PackedScene" uid="uid://chknskn71pcvk" path="res://robot/component/attack/laser/laser.tscn" id="12_ktnt7"]
 
 [sub_resource type="Resource" id="Resource_oyqv5"]
 resource_name = "360 Degree Camera"
@@ -93,7 +94,15 @@ scene = ExtResource("11_wxdsy")
 category = 2
 metadata/_custom_type_script = "uid://cj23mvreov1u7"
 
+[sub_resource type="Resource" id="Resource_tk0sb"]
+resource_name = "Laser"
+script = ExtResource("1_fi3bn")
+name = &"Laser"
+scene = ExtResource("12_ktnt7")
+category = 0
+metadata/_custom_type_script = "uid://cj23mvreov1u7"
+
 [resource]
 script = ExtResource("7_ktnt7")
-components = Array[ExtResource("1_fi3bn")]([SubResource("Resource_oyqv5"), SubResource("Resource_xjdr3"), SubResource("Resource_oj2or"), SubResource("Resource_o38ay"), SubResource("Resource_hntei"), SubResource("Resource_ac475"), SubResource("Resource_7dhi4"), SubResource("Resource_ktnt7"), SubResource("Resource_df12t"), SubResource("Resource_yxi0w")])
+components = Array[ExtResource("1_fi3bn")]([SubResource("Resource_oyqv5"), SubResource("Resource_xjdr3"), SubResource("Resource_oj2or"), SubResource("Resource_o38ay"), SubResource("Resource_hntei"), SubResource("Resource_ac475"), SubResource("Resource_7dhi4"), SubResource("Resource_ktnt7"), SubResource("Resource_df12t"), SubResource("Resource_yxi0w"), SubResource("Resource_tk0sb")])
 metadata/_custom_type_script = "uid://cooiktvds5ujg"

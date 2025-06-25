@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cti61c48q8k24"]
+
+[ext_resource type="Script" uid="uid://c7djq2m3f6uf3" path="res://robot/component/attack/base_attack_comp.gd" id="1_vlwxs"]
+[ext_resource type="PackedScene" uid="uid://w4ost6rfsmwv" path="res://robot/component/comp_base/comp_base.tscn" id="2_cyljl"]
+
+[node name="BaseAttackComp" type="Area2D" groups=["attack_comp"]]
+collision_layer = 0
+collision_mask = 3
+monitoring = false
+monitorable = false
+script = ExtResource("1_vlwxs")
+
+[node name="CompBase" parent="." instance=ExtResource("2_cyljl")]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -38,7 +38,7 @@ func on_component_toggled(component: Component, toggled_on: bool) -> void:
 		act_comp.initalize(component.name)
 		selected_components[component] = act_comp
 	
-	print(selected_components)
+	#print(selected_components)
 
 
 @onready var world: CanvasLayer = get_tree().get_first_node_in_group("world")

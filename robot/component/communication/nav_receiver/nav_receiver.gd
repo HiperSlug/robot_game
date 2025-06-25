@@ -39,4 +39,5 @@ func stop_receiving() -> void:
 
 func _direction() -> Vector2:
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	#print(input_dir)
 	return input_dir

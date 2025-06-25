@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://chknskn71pcvk"]
+
+[ext_resource type="PackedScene" uid="uid://cti61c48q8k24" path="res://robot/component/attack/base_attack_comp.tscn" id="1_0gj3h"]
+[ext_resource type="Script" uid="uid://bnhpp3u82l2q2" path="res://robot/component/attack/laser/laser.gd" id="2_cqw7b"]
+[ext_resource type="Texture2D" uid="uid://0d08vljed4sa" path="res://icon.svg" id="2_u8qlt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqpfq"]
+size = Vector2(8, 8)
+
+[node name="Laser" instance=ExtResource("1_0gj3h")]
+script = ExtResource("2_cqw7b")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="." index="0"]
+remote_path = NodePath("../CollisionShape2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="RemoteTransform2D" index="0"]
+self_modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.0625, 0.0625)
+texture = ExtResource("2_u8qlt")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 128)
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="1"]
+target_position = Vector2(0, -500)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+shape = SubResource("RectangleShape2D_eqpfq")
