@@ -41,7 +41,7 @@ func on_component_toggled(component: Component, toggled_on: bool) -> void:
 	print(selected_components)
 
 
-@onready var world: Node2D = get_tree().get_first_node_in_group("world")
+@onready var world: CanvasLayer = get_tree().get_first_node_in_group("world")
 
 func _on_finish_robot_pressed() -> void:
 	start_preview()

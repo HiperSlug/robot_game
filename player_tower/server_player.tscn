@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccx2helx5hgs2"]
+
+[ext_resource type="PackedScene" uid="uid://pt7bf7n763eq" path="res://robot/component/health/10_health/10_health.tscn" id="1_g1lh6"]
+[ext_resource type="PackedScene" uid="uid://dr1wgxbj52ouy" path="res://robot/component/sensor/camera/360_degrees/360_degrees.tscn" id="2_rxk57"]
+[ext_resource type="PackedScene" uid="uid://7v6atjoinx2s" path="res://robot/component/communication/sensor_emitter/sensor_emitter.tscn" id="3_mwtcs"]
+[ext_resource type="Texture2D" uid="uid://0d08vljed4sa" path="res://icon.svg" id="4_rxk57"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_st8xy"]
+radius = 17.0
+
+[node name="ServerPlayer" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_st8xy")
+
+[node name="10Health" parent="." instance=ExtResource("1_g1lh6")]
+
+[node name="360Degrees" parent="." instance=ExtResource("2_rxk57")]
+
+[node name="SensorEmitter" parent="." instance=ExtResource("3_mwtcs")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = -3.14159
+scale = Vector2(0.201539, 0.238347)
+texture = ExtResource("4_rxk57")
