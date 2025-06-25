@@ -90,6 +90,7 @@ zoom_out={
 2d_physics/layer_3="ActionReceiver"
 2d_physics/layer_4="Robot"
 2d_physics/layer_5="Mouse Pickable"
+2d_physics/layer_6="Camera Occlusion"
 
 [rendering]
 

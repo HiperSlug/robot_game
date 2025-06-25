@@ -1,149 +1,18 @@
-[gd_resource type="Resource" script_class="ComponentLibrary" load_steps=28 format=3 uid="uid://cs7w1blbtwnqs"]
+[gd_resource type="Resource" script_class="ComponentLibrary" load_steps=5 format=3 uid="uid://cs7w1blbtwnqs"]
 
 [ext_resource type="Script" uid="uid://cj23mvreov1u7" path="res://robot_builder/lib/component.gd" id="1_teqvu"]
-[ext_resource type="PackedScene" uid="uid://dr1wgxbj52ouy" path="res://robot/components/sensor/camera/360_degrees/360_degrees.tscn" id="2_u0yod"]
-[ext_resource type="PackedScene" uid="uid://7uqojmqet0ip" path="res://robot/components/sensor/camera/180_degrees/180_degrees.tscn" id="3_aj6x0"]
-[ext_resource type="PackedScene" uid="uid://7v6atjoinx2s" path="res://robot/components/communication/sensor_emitter/sensor_emitter.tscn" id="4_0o501"]
-[ext_resource type="PackedScene" uid="uid://dw7r3dxftykog" path="res://robot/components/damage/health/health_t1.tscn" id="5_3v4td"]
-[ext_resource type="PackedScene" uid="uid://b20xapayygwnr" path="res://robot/components/navigation/nav_straight/nav_straight.tscn" id="6_q5hhr"]
-[ext_resource type="Script" uid="uid://c76oxorxuuuyw" path="res://robot/components/engine/engine_comp.gd" id="7_t437p"]
-[ext_resource type="PackedScene" uid="uid://5lhep0u7oesx" path="res://robot/components/communication/nav_receiver/nav_receiver.tscn" id="8_26pej"]
-[ext_resource type="PackedScene" uid="uid://bcytf4knpeloh" path="res://robot/components/communication/action_emitter/action_emitter.tscn" id="9_p455i"]
-[ext_resource type="PackedScene" uid="uid://chmaxn1wk2i4x" path="res://robot/components/communication/action_receiver/action_receiver.tscn" id="10_u0nlq"]
-[ext_resource type="PackedScene" uid="uid://cahct73xradnw" path="res://robot/components/navigation/nav_none/nav_none.tscn" id="11_jfaog"]
-[ext_resource type="PackedScene" uid="uid://cvvwiuitd4env" path="res://robot/components/damage/weapon/laser/laser.tscn" id="12_e58hu"]
+[ext_resource type="PackedScene" uid="uid://cfm3iesx1icy7" path="res://robot/components/damage/health/death/death_comp.tscn" id="2_h2j56"]
 [ext_resource type="Script" uid="uid://cooiktvds5ujg" path="res://robot_builder/lib/component_library.gd" id="13_jlgnk"]
 
-[sub_resource type="Resource" id="Resource_oyqv5"]
-resource_name = "360 Degree Camera"
+[sub_resource type="Resource" id="Resource_f7mvb"]
+resource_name = "g"
 script = ExtResource("1_teqvu")
-name = &"360 Degree Camera"
-scene = ExtResource("2_u0yod")
-category = 4
-metadata/_custom_type_script = "uid://cj23mvreov1u7"
-
-[sub_resource type="Resource" id="Resource_xjdr3"]
-resource_name = "180 Degree Camera"
-script = ExtResource("1_teqvu")
-name = &"180 Degree Camera"
-scene = ExtResource("3_aj6x0")
-category = 4
-metadata/_custom_type_script = "uid://cj23mvreov1u7"
-
-[sub_resource type="Resource" id="Resource_oj2or"]
-resource_name = "Sensor Emitter"
-script = ExtResource("1_teqvu")
-name = &"Sensor Emitter"
-scene = ExtResource("4_0o501")
-category = 3
-metadata/_custom_type_script = "uid://cj23mvreov1u7"
-
-[sub_resource type="PackedScene" id="PackedScene_51ytc"]
-_bundled = {
-"base_scene": 0,
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"names": PackedStringArray("10Health"),
-"node_count": 1,
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 0, 0),
-"variants": [ExtResource("5_3v4td")],
-"version": 3
-}
-
-[sub_resource type="Resource" id="Resource_o38ay"]
-resource_name = "Extra Health"
-script = ExtResource("1_teqvu")
-name = &"Extra Health"
-scene = SubResource("PackedScene_51ytc")
-category = 0
-metadata/_custom_type_script = "uid://cj23mvreov1u7"
-
-[sub_resource type="Resource" id="Resource_hntei"]
-resource_name = "Nav Straight"
-script = ExtResource("1_teqvu")
-name = &"Nav Straight"
-scene = ExtResource("6_q5hhr")
-category = 2
-metadata/_custom_type_script = "uid://cj23mvreov1u7"
-
-[sub_resource type="PackedScene" id="PackedScene_bflui"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"names": PackedStringArray("SpeedComp", "Node", "engine_comp", "script"),
-"node_count": 1,
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 3, 0, 1, 2),
-"variants": [ExtResource("7_t437p")],
-"version": 3
-}
-
-[sub_resource type="PackedScene" id="PackedScene_2u8ln"]
-_bundled = {
-"base_scene": 0,
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"names": PackedStringArray("30Engine"),
-"node_count": 1,
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 0, 0),
-"variants": [SubResource("PackedScene_bflui")],
-"version": 3
-}
-
-[sub_resource type="Resource" id="Resource_ac475"]
-resource_name = "Engine 30"
-script = ExtResource("1_teqvu")
-name = &"Engine 30"
-scene = SubResource("PackedScene_2u8ln")
-category = 1
-metadata/_custom_type_script = "uid://cj23mvreov1u7"
-
-[sub_resource type="Resource" id="Resource_7dhi4"]
-resource_name = "NavReceiver"
-script = ExtResource("1_teqvu")
-name = &"NavReceiver"
-scene = ExtResource("8_26pej")
-category = 3
-metadata/_custom_type_script = "uid://cj23mvreov1u7"
-
-[sub_resource type="Resource" id="Resource_ktnt7"]
-resource_name = "Action Emittor"
-script = ExtResource("1_teqvu")
-name = &"Action Emittor"
-scene = ExtResource("9_p455i")
-category = 3
-metadata/_custom_type_script = "uid://cj23mvreov1u7"
-
-[sub_resource type="Resource" id="Resource_df12t"]
-resource_name = "Action Receiver"
-script = ExtResource("1_teqvu")
-name = &"Action Receiver"
-scene = ExtResource("10_u0nlq")
-category = 3
-metadata/_custom_type_script = "uid://cj23mvreov1u7"
-
-[sub_resource type="Resource" id="Resource_yxi0w"]
-resource_name = "Nav None"
-script = ExtResource("1_teqvu")
-name = &"Nav None"
-scene = ExtResource("11_jfaog")
-category = 2
-metadata/_custom_type_script = "uid://cj23mvreov1u7"
-
-[sub_resource type="Resource" id="Resource_tk0sb"]
-resource_name = "Laser"
-script = ExtResource("1_teqvu")
-name = &"Laser"
-scene = ExtResource("12_e58hu")
+name = &"g"
+scene = ExtResource("2_h2j56")
 category = 0
 metadata/_custom_type_script = "uid://cj23mvreov1u7"
 
 [resource]
 script = ExtResource("13_jlgnk")
-components = Array[ExtResource("1_teqvu")]([SubResource("Resource_oyqv5"), SubResource("Resource_xjdr3"), SubResource("Resource_oj2or"), SubResource("Resource_o38ay"), SubResource("Resource_hntei"), SubResource("Resource_ac475"), SubResource("Resource_7dhi4"), SubResource("Resource_ktnt7"), SubResource("Resource_df12t"), SubResource("Resource_yxi0w"), SubResource("Resource_tk0sb")])
+components = Array[ExtResource("1_teqvu")]([SubResource("Resource_f7mvb")])
 metadata/_custom_type_script = "uid://cooiktvds5ujg"

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://jq46xrqlumkp"]
+
+[ext_resource type="Script" uid="uid://b0fgj7id0mbq" path="res://robot/components/sensor/camera/base/camera_cone.gd" id="1_uhys6"]
+
+[node name="Polygon" type="CollisionPolygon2D"]
+polygon = PackedVector2Array(0, 0)
+script = ExtResource("1_uhys6")
