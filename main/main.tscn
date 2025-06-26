@@ -1,40 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdsuy63a5o0vy"]
+[gd_scene load_steps=2 format=3 uid="uid://cdsuy63a5o0vy"]
 
 [ext_resource type="PackedScene" uid="uid://ddjaptg1tbkps" path="res://world/world.tscn" id="1_53q0u"]
-[ext_resource type="PackedScene" uid="uid://d14sjf2tn8tpi" path="res://robot_builder/robot_builder.tscn" id="2_pjrb6"]
 
 [node name="Main" type="Node"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-mouse_filter = 2
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/HBoxContainer/PanelContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/HBoxContainer/PanelContainer/SubViewportContainer"]
-disable_3d = true
-handle_input_locally = false
-physics_object_picking = true
-size = Vector2i(2, 2)
-render_target_update_mode = 4
-
-[node name="World" parent="CanvasLayer/HBoxContainer/PanelContainer/SubViewportContainer/SubViewport" instance=ExtResource("1_53q0u")]
-
-[node name="RobotBuilder" parent="CanvasLayer/HBoxContainer" instance=ExtResource("2_pjrb6")]
-layout_mode = 2
-size_flags_horizontal = 1
-mouse_filter = 2
+[node name="World" parent="." instance=ExtResource("1_53q0u")]

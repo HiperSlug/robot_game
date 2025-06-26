@@ -27,13 +27,12 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 visibility_manager=""
 world=""
-nav_comp=""
-camera_comp=""
 component=""
 
 [gui]
 
 theme/custom="uid://b2gg0iwlhj6v5"
+theme/custom_font="uid://c1ibn4h8cwck8"
 
 [input]
 

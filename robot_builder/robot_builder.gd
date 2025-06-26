@@ -1,27 +1,26 @@
 extends Control
 class_name RobotBuilder
 
-const COMP_LIB = preload("res://robot_builder/lib/comp_lib.tres")
-const CATEGORY = preload("res://robot_builder/category.tscn")
-@onready var v_box_container: VBoxContainer = $HSplitContainer/PanelContainer2/VBoxContainer/VBoxContainer
-var category_nodes: Dictionary[Category.CATEGORIES, Category] = {}
-
-func _ready() -> void:
-	var components := COMP_LIB.components as Array[Component]
-	for component: Component in components:
-		var category: Category = get_category(component.category)
-		category.add_component(component)
-
-func get_category(category: Category.CATEGORIES) -> Category:
-	var category_node = category_nodes.get(category)
-	if category_node:
-		return category_node
-	
-	category_node = CATEGORY.instantiate()
-	category_nodes[category] = category_node
-	v_box_container.add_child(category_node)
-	category_node.initalize(self, category)
-	return category_node
+#
+#@onready var v_box_container: VBoxContainer = $HSplitContainer/PanelContainer2/VBoxContainer/VBoxContainer
+#var category_nodes: Dictionary[Category.CATEGORIES, Category] = {}
+#
+#func _ready() -> void:
+	#var components := COMP_LIB.components as Array[Component]
+	#for component: Component in components:
+		#var category: Category = get_category(component.category)
+		#category.add_component(component)
+#
+#func get_category(category: Category.CATEGORIES) -> Category:
+	#var category_node = category_nodes.get(category)
+	#if category_node:
+		#return category_node
+	#
+	#category_node = CATEGORY.instantiate()
+	#category_nodes[category] = category_node
+	#v_box_container.add_child(category_node)
+	#category_node.initalize(self, category)
+	#return category_node
 
 @onready var active_container: VBoxContainer = $HSplitContainer/PanelContainer/VBoxContainer/VBoxContainer/VBoxContainer
 var selected_components: Dictionary[Component, ActiveComponent] = {}

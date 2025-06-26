@@ -30,7 +30,6 @@ script = ExtResource("1_qaxc5")
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
-drag_area_highlight_in_editor = true
 
 [node name="PanelContainer" type="PanelContainer" parent="HSplitContainer"]
 layout_mode = 2
@@ -100,12 +99,10 @@ size_flags_vertical = 3
 [node name="Label" type="Label" parent="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "AVAILABLE COMPONENTS"
-horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="Category" parent="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer/VBoxContainer" instance=ExtResource("3_y6t8v")]
 layout_mode = 2
@@ -122,6 +119,38 @@ component = SubResource("Resource_kusqm")
 layout_mode = 2
 component = SubResource("Resource_kusqm")
 
+[node name="Category2" parent="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer/VBoxContainer" instance=ExtResource("3_y6t8v")]
+layout_mode = 2
+title = "Communication"
+
+[node name="Label" parent="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer/VBoxContainer/Category2/VBoxContainer" index="0"]
+text = "Communication"
+
+[node name="CompButtonAny" parent="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer/VBoxContainer/Category2/VBoxContainer/VBoxContainer" index="0" instance=ExtResource("4_0566f")]
+layout_mode = 2
+component = SubResource("Resource_kusqm")
+
+[node name="CompButtonAny2" parent="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer/VBoxContainer/Category2/VBoxContainer/VBoxContainer" index="1" instance=ExtResource("4_0566f")]
+layout_mode = 2
+component = SubResource("Resource_kusqm")
+
+[node name="Category3" parent="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer/VBoxContainer" instance=ExtResource("3_y6t8v")]
+layout_mode = 2
+title = "Communication"
+
+[node name="Label" parent="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer/VBoxContainer/Category3/VBoxContainer" index="0"]
+text = "Communication"
+
+[node name="CompButtonAny" parent="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer/VBoxContainer/Category3/VBoxContainer/VBoxContainer" index="0" instance=ExtResource("4_0566f")]
+layout_mode = 2
+component = SubResource("Resource_kusqm")
+
+[node name="CompButtonAny2" parent="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer/VBoxContainer/Category3/VBoxContainer/VBoxContainer" index="1" instance=ExtResource("4_0566f")]
+layout_mode = 2
+component = SubResource("Resource_kusqm")
+
 [connection signal="pressed" from="HSplitContainer/PanelContainer/VBoxContainer/FinishRobot" to="." method="_on_finish_robot_pressed"]
 
 [editable path="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer/VBoxContainer/Category"]
+[editable path="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer/VBoxContainer/Category2"]
+[editable path="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer/VBoxContainer/Category3"]

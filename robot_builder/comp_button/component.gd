@@ -2,9 +2,9 @@
 extends Resource
 class_name Component
 
-@export var name: StringName:
+@export var name: String = "Comp":
 	set(value):
 		name = value
-		resource_name = value
+		resource_name = name
+
 @export var scene: PackedScene
-@export var category: Category.CATEGORIES

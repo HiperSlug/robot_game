@@ -10,6 +10,7 @@ class_name CameraCone
 	set(value):
 		angle = value
 		setup()
+
 const collision_mask: int = 6
 const rad_per_vert: float = TAU / 128
 
