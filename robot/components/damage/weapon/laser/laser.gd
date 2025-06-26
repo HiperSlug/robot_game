@@ -1,4 +1,3 @@
-@tool
 extends Node2D
 class_name Laser
 
@@ -7,9 +6,13 @@ class_name Laser
 @onready var collision_shape_2d: CollisionShape2D = $Hitbox/CollisionShape2D
 
 @export var offset_y: float
+@export var distance: float = 200:
+	set(val):
+		distance = val
+		ray_cast_2d.target_position = Vector2(0, -distance)
 
 func _process(_delta: float) -> void:
-	var length := get_length()
+	var length := maxf(get_length(), abs(offset_y))
 	
 	laser.region_rect.size.y = length + offset_y
 	laser.position.y = - length / 2  + offset_y / 2

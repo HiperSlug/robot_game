@@ -29,5 +29,5 @@ func cancell() -> void:
 func spawn(scene: PackedScene, pos: Vector2) -> void:
 	choosing = false
 	var robot = scene.instantiate()
-	add_child(robot)
+	get_tree().get_first_node_in_group("visibility_manager").add_child(robot)
 	robot.global_position = pos

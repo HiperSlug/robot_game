@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://d4knhrarpntch" path="res://robot/components/damage/weapon/laser/laser.png" id="3_wqesr"]
 [ext_resource type="Texture2D" uid="uid://dvau1xumn1jp2" path="res://robot/components/damage/weapon/laser/gun.png" id="4_j1tl8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3bq0"]
-size = Vector2(4, 174.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1tl8"]
+resource_local_to_scene = true
+size = Vector2(4, 200)
 
 [node name="Laser" type="Node2D" groups=["component", "weapon_comp"]]
 script = ExtResource("1_rtor7")
@@ -17,19 +18,21 @@ metadata/_edit_horizontal_guides_ = [-34.0]
 dps = 20.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -112.75)
-shape = SubResource("RectangleShape2D_k3bq0")
+position = Vector2(0, -125.5)
+shape = SubResource("RectangleShape2D_j1tl8")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -25.5)
 target_position = Vector2(0, -200)
 collision_mask = 3
+collide_with_areas = true
 
 [node name="Laser" type="Sprite2D" parent="."]
 texture_repeat = 2
-position = Vector2(0, -112.75)
+position = Vector2(0, -125.5)
 texture = ExtResource("3_wqesr")
 region_enabled = true
-region_rect = Rect2(0, 0, 4, 174.5)
+region_rect = Rect2(0, 0, 4, 200)
 
 [node name="Gun" type="Sprite2D" parent="."]
 position = Vector2(0, -6)

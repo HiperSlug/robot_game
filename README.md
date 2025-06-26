@@ -18,7 +18,7 @@
 - Win encounters to gain an economic advantage and eventually destroy the enemies tower.
 
 ## MVP
-The MVP will allow the players to build specialized robots that can fight eachother in a online arena.
+The MVP will allow the players to build specialized robots that can fight eachother in a online arena. 
 
 ## Features
 Optional features will not be included in the MVP

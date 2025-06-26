@@ -5,6 +5,7 @@ class_name NavHandlerComp
 @onready var robot: CharacterBody2D = $".."
 @onready var comp_base: CompBase = $CompBase
 
+
 var speed: float = 0
 
 func get_sib() -> void:
@@ -19,11 +20,15 @@ func get_sib() -> void:
 var navs: Array
 var engines: Array
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	
 	var dir := get_direction()
 	
 	robot.velocity = speed * dir
+	if dir != Vector2.ZERO:
+		
+		robot.rotation = lerp_angle(robot.rotation, dir.angle() + (TAU/4) , TAU  * delta)
+		#robot.rotation = dir.angle() + (TAU / 4)
 	robot.move_and_slide()
 
 func get_direction() -> Vector2:

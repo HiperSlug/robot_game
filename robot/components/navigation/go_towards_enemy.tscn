@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://fuse83aijhfk"]
+
+[ext_resource type="Script" uid="uid://c3vlrd4d4ilgy" path="res://robot/MVP/go_towards_enemy.gd" id="1_gdjbg"]
+
+[node name="GoTowardsEnemy" type="NavigationAgent2D" groups=["navigation_comp"]]
+script = ExtResource("1_gdjbg")
