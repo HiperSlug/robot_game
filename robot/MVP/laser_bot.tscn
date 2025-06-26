@@ -1,0 +1,56 @@
+[gd_scene load_steps=12 format=3 uid="uid://ma84hi2ae2bs"]
+
+[ext_resource type="Texture2D" uid="uid://cbrck8rew1xi7" path="res://robot/MVP/robot_outline.png" id="1_4y0an"]
+[ext_resource type="PackedScene" uid="uid://c5uo8wacbn2b1" path="res://robot/components/engine/engine_comp.tscn" id="2_u3dx0"]
+[ext_resource type="PackedScene" uid="uid://bjvhbfrv0kbow" path="res://robot/components/damage/health/health_manager/health_manager_comp.tscn" id="3_yws1w"]
+[ext_resource type="PackedScene" uid="uid://dw7r3dxftykog" path="res://robot/components/damage/health/health_comp.tscn" id="4_qy4kg"]
+[ext_resource type="PackedScene" uid="uid://cvvwiuitd4env" path="res://robot/components/damage/weapon/laser/laser.tscn" id="5_k5hx7"]
+[ext_resource type="Script" uid="uid://c3vlrd4d4ilgy" path="res://robot/MVP/go_towards_enemy.gd" id="6_yws1w"]
+[ext_resource type="PackedScene" uid="uid://cm06qa2uebv75" path="res://robot/components/damage/hurtbox/hurtbox_comp.tscn" id="7_qy4kg"]
+[ext_resource type="PackedScene" uid="uid://cfm3iesx1icy7" path="res://robot/components/damage/health/death/death_comp.tscn" id="8_k5hx7"]
+[ext_resource type="PackedScene" uid="uid://cugedw3rnxl37" path="res://robot/components/navigation/nav_handler/nav_handler_comp.tscn" id="9_xc738"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6d0r1"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qy4kg"]
+radius = 16.0
+
+[node name="LaserBot" type="CharacterBody2D"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6d0r1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4y0an")
+
+[node name="EngineComp" parent="." instance=ExtResource("2_u3dx0")]
+
+[node name="EngineComp2" parent="." instance=ExtResource("2_u3dx0")]
+
+[node name="EngineComp3" parent="." instance=ExtResource("2_u3dx0")]
+
+[node name="EngineComp4" parent="." instance=ExtResource("2_u3dx0")]
+
+[node name="EngineComp5" parent="." instance=ExtResource("2_u3dx0")]
+
+[node name="HealthHandlerComp" parent="." instance=ExtResource("3_yws1w")]
+
+[node name="HealthComp" parent="." instance=ExtResource("4_qy4kg")]
+
+[node name="HealthComp2" parent="." instance=ExtResource("4_qy4kg")]
+
+[node name="Laser" parent="." instance=ExtResource("5_k5hx7")]
+
+[node name="GoTowardsEnemy" type="NavigationAgent2D" parent="." groups=["navigation_comp"]]
+script = ExtResource("6_yws1w")
+
+[node name="HurtboxComp" parent="." instance=ExtResource("7_qy4kg")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComp"]
+shape = SubResource("CircleShape2D_qy4kg")
+
+[node name="Death" parent="." instance=ExtResource("8_k5hx7")]
+
+[node name="NavHandler" parent="." instance=ExtResource("9_xc738")]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dknhhd5ew61kd"]
+
+[ext_resource type="Script" uid="uid://dfh4s1v1pw5gx" path="res://server/spawn_choice.gd" id="1_iw104"]
+[ext_resource type="Script" uid="uid://b7i3yfc6o7ihr" path="res://server/scene_button.gd" id="2_36w3f"]
+[ext_resource type="PackedScene" uid="uid://ma84hi2ae2bs" path="res://robot/MVP/laser_bot.tscn" id="3_6ntui"]
+
+[node name="SpawnChoice" type="PanelContainer"]
+offset_right = 160.0
+offset_bottom = 58.0
+theme_type_variation = &"FlatGrayPanelContainer"
+script = ExtResource("1_iw104")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="SceneButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+text = "LASER_BOT"
+script = ExtResource("2_36w3f")
+scene = ExtResource("3_6ntui")
+metadata/_custom_type_script = "uid://b7i3yfc6o7ihr"
+
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="scn_pressed" from="HBoxContainer/SceneButton" to="." method="_on_scene_button_scn_pressed"]

@@ -1,19 +1,21 @@
+@tool
 extends Node2D
 class_name Laser
 
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var laser: Sprite2D = $Laser
 @onready var collision_shape_2d: CollisionShape2D = $Hitbox/CollisionShape2D
 
+@export var offset_y: float
 
 func _process(_delta: float) -> void:
 	var length := get_length()
 	
-	sprite_2d.region_rect.size.y = length
-	sprite_2d.position.y = length / 2
+	laser.region_rect.size.y = length + offset_y
+	laser.position.y = - length / 2  + offset_y / 2
 	
-	collision_shape_2d.shape.size.y = length
-	collision_shape_2d.position.y = length / 2
+	collision_shape_2d.shape.size.y = length  + offset_y
+	collision_shape_2d.position.y = - length / 2  + offset_y / 2
 
 
 func get_length() -> float:

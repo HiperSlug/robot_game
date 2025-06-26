@@ -2,7 +2,7 @@ extends Area2D
 class_name ActionEmitter
 
 
-var receivers: Array[ActionReceiver] = []
+var receivers: Array = []
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is ActionReceiver:
@@ -21,8 +21,6 @@ func _on_area_exited(area: Area2D) -> void:
 var nav: NavHandlerComp = null
 @onready var comp_base: CompBase = $CompBase
 
-func _ready() -> void:
-	call_deferred("get_sib")
 
 func get_sib() -> void:
 	nav = comp_base.get_first_sib_group("nav_handler_comp")

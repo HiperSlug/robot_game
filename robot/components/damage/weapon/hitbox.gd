@@ -37,7 +37,8 @@ func _on_timer_timeout() -> void:
 
 
 func enter(hurtbox: HurtboxComp) -> void:
-	pass
+	hurtbox.damage(enter_dmg)
 
 func inside(hurtboxes: Array[HurtboxComp]) -> void:
-	pass
+	for hurtbox in hurtboxes:
+		hurtbox.damage(dps * tick_time)

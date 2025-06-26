@@ -1,29 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvvwiuitd4env"]
+[gd_scene load_steps=6 format=3 uid="uid://cvvwiuitd4env"]
 
 [ext_resource type="PackedScene" uid="uid://bts08ovrowwqq" path="res://robot/components/damage/weapon/hitbox.tscn" id="1_k3bq0"]
 [ext_resource type="Script" uid="uid://8w2pf42gyh25" path="res://robot/components/damage/weapon/laser/laser.gd" id="1_rtor7"]
+[ext_resource type="Texture2D" uid="uid://d4knhrarpntch" path="res://robot/components/damage/weapon/laser/laser.png" id="3_wqesr"]
+[ext_resource type="Texture2D" uid="uid://dvau1xumn1jp2" path="res://robot/components/damage/weapon/laser/gun.png" id="4_j1tl8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3bq0"]
-size = Vector2(4, 33)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_k3bq0"]
+size = Vector2(4, 174.5)
 
 [node name="Laser" type="Node2D" groups=["component", "weapon_comp"]]
 script = ExtResource("1_rtor7")
+offset_y = -25.5
+metadata/_edit_horizontal_guides_ = [-34.0]
 
 [node name="Hitbox" parent="." instance=ExtResource("1_k3bq0")]
-dps = 10.0
+dps = 20.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -16.5)
+position = Vector2(0, -112.75)
 shape = SubResource("RectangleShape2D_k3bq0")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, -200)
+collision_mask = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Laser" type="Sprite2D" parent="."]
 texture_repeat = 2
-position = Vector2(0, -16.5)
-texture = SubResource("PlaceholderTexture2D_k3bq0")
+position = Vector2(0, -112.75)
+texture = ExtResource("3_wqesr")
 region_enabled = true
-region_rect = Rect2(0, 0, 4, 33)
+region_rect = Rect2(0, 0, 4, 174.5)
+
+[node name="Gun" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("4_j1tl8")

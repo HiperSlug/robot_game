@@ -4,8 +4,6 @@ class_name NavReceiver
 var nav: NavHandlerComp
 @onready var comp_base: CompBase = $CompBase
 
-func _ready() -> void:
-	call_deferred("get_sib")
 
 func get_sib() -> void:
 	nav = comp_base.get_first_sib_group("nav_handler_comp")

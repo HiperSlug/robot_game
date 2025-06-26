@@ -6,10 +6,8 @@ class_name SensorEmitter
 
 var cam: CameraComp = null
 
-func _ready() -> void:
-	call_deferred("get_siblings")
 
-func get_siblings() -> void:
+func get_sib() -> void:
 	cam = comp_base.get_first_sib_group("camera_comp")
 
 func _physics_process(_delta: float) -> void:
