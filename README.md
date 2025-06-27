@@ -36,8 +36,8 @@ Optional features will not be included in the MVP
 			- [ ] Choose arena, rand or specific (optional)
 		- [ ] Display a list of buttons, each with a name and a icon representing weather you need a password
 - [ ] Arena
-	- [ ] A pre-build tilemap with tower locations
-	- [ ] Start with just one arena
+	- [x] A pre-build tilemap with tower locations
+	- [x] Start with just one arena
 	- [ ] Fog of war (Optional)
 - [ ] Matches 
 	- [ ] Randomly choosing sides
@@ -52,8 +52,8 @@ Optional features will not be included in the MVP
 	- [ ] Creating robots
 		- [ ] MVP:
 			- [ ] Prebuilt loadouts
-				- [ ] Right click in a valid area to open gui
-				- [ ] Select Loadout
+				- [x] Right click in a valid area to open gui
+				- [x] Select Loadout
 		- [ ] More Indepth (optional)
 			- [ ] Right click in a valid area around your main tower to start creating a robot
 			- [ ] Blueprints (optional)
@@ -77,11 +77,11 @@ Optional features will not be included in the MVP
 					- [ ] All components with variables such as Nav, CamCtrl, WpnCtrl will create interactable ways to set their variables
 	- [ ] Components
 		- [ ] Weapon
-			- [ ] Laser: Deal constant damage in facing direction, limited range, no pierce.
+			- [x] Laser: Deal constant damage in facing direction, limited range, no pierce.
 			- [ ] MORE TODO. These shouldnt be that complicated, whatever I add should just be different ways of having hitboxes act.
-		- [ ] Engine (aka speed)
-		- [ ] Health
-		- [ ] Pathfind towards closest enemy component (PTCEC?)
+		- [x] Engine (aka speed)
+		- [x] Health
+		- [x] Pathfind towards closest enemy component (PTCEC?)
 		- [ ] Not MVP:
 			- [ ] Camera
 				- [ ] Shapes
@@ -115,8 +115,8 @@ Optional features will not be included in the MVP
 						- [ ] HUD element that lets you access robots by name
 							- [ ] Procedurally Generated Names
 						- [ ] Ability to select robots with LMB without it clasing with another control // TODO: Other Controls
-		- [ ] Backend
-			- [ ] Hurtbox component
+		- [x] Backend
+			- [x] Hurtbox component
 - [ ] Economy (optional)
 	- [ ] ¯\_(ツ)/¯
 	- [ ] My current thoughts on econ would put this game way out of scope

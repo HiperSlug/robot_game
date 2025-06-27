@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ccx2helx5hgs2"]
+[gd_scene load_steps=11 format=3 uid="uid://ccx2helx5hgs2"]
 
 [ext_resource type="Texture2D" uid="uid://dlg1xdlo764kv" path="res://server/server.png" id="2_er2ig"]
 [ext_resource type="PackedScene" uid="uid://bjvhbfrv0kbow" path="res://robot/components/damage/health/health_manager/health_manager_comp.tscn" id="2_g1lh6"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://w4ost6rfsmwv" path="res://robot/components/comp_base.tscn" id="5_cl8lc"]
 [ext_resource type="Script" uid="uid://b4ymga6s5rt64" path="res://server/spawn_area_comp.gd" id="6_t43u5"]
 [ext_resource type="Texture2D" uid="uid://dnvm0j05udesl" path="res://server/outline.png" id="7_87v45"]
+[ext_resource type="PackedScene" uid="uid://cm06qa2uebv75" path="res://robot/components/damage/hurtbox/hurtbox_comp.tscn" id="8_it51r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_st8xy"]
 radius = 16.0
@@ -41,5 +42,10 @@ shape = SubResource("CircleShape2D_87v45")
 
 [node name="Sprite2D" type="Sprite2D" parent="SpawnAreaComp"]
 texture = ExtResource("7_87v45")
+
+[node name="HurtboxComp" parent="." instance=ExtResource("8_it51r")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HurtboxComp"]
+shape = SubResource("CircleShape2D_st8xy")
 
 [connection signal="input_event" from="SpawnAreaComp" to="SpawnAreaComp" method="_on_input_event"]
