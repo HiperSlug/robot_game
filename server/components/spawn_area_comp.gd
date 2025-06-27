@@ -51,7 +51,6 @@ func server_spawn(scene: PackedScene, pos: Vector2, team: Globals.Team) -> void:
 	var robot: CharacterBody2D = scene.instantiate()
 	
 	var team_comp := TEAM_COMP.instantiate()
-	print(team)
 	team_comp.team = team
 	robot.add_child(team_comp, true)
 	

@@ -18,8 +18,5 @@ func _ready() -> void:
 	if override:
 		team = team_override
 	
-	print(team)
-	print(enemy_group())
-	print(friendly_group())
 	robot.remove_from_group(enemy_group())
 	robot.add_to_group(friendly_group())
