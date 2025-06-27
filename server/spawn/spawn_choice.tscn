@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dknhhd5ew61kd"]
+
+[ext_resource type="Script" uid="uid://dfh4s1v1pw5gx" path="res://server/spawn/spawn_choice.gd" id="1_iw104"]
+[ext_resource type="Script" uid="uid://b7i3yfc6o7ihr" path="res://server/scene_button.gd" id="2_36w3f"]
+
+[node name="SpawnChoice" type="PanelContainer"]
+offset_right = 107.0
+offset_bottom = 58.0
+theme_type_variation = &"FlatGrayPanelContainer"
+script = ExtResource("1_iw104")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="SceneButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+text = "LASER"
+script = ExtResource("2_36w3f")
+scene = "uid://ma84hi2ae2bs"
+metadata/_custom_type_script = "uid://b7i3yfc6o7ihr"
+
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

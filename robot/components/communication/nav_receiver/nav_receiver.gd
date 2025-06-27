@@ -1,12 +1,11 @@
 extends Area2D
 class_name NavReceiver
 
-var nav: NavHandlerComp
-@onready var comp_base: CompBase = $CompBase
-
-
-func get_sib() -> void:
-	nav = comp_base.get_first_sib_group("nav_handler_comp")
+@onready var nav: NavManagerComp = await CompGetter.new(
+	self.get_parent(),
+	Globals.Comp.NAV_MANAGER,
+	CompGetter.FIRST,
+).ready
 
 
 # this functionality will probably change later.

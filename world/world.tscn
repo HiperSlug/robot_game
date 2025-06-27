@@ -1,27 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://ddjaptg1tbkps"]
 
-[ext_resource type="Script" uid="uid://ca4hqlffy4xdb" path="res://world/camera_2d.gd" id="1_mmdvd"]
+[ext_resource type="Script" uid="uid://ca4hqlffy4xdb" path="res://world/controlled_camera.gd" id="1_mmdvd"]
 [ext_resource type="Script" uid="uid://chqh6sgj67n0f" path="res://world/visibility_manager.gd" id="2_h5o24"]
-[ext_resource type="PackedScene" uid="uid://bm8hkybc0j55f" path="res://arenas/base_arena.tscn" id="4_mmdvd"]
+[ext_resource type="PackedScene" uid="uid://bm8hkybc0j55f" path="res://arenas/arena_1.tscn" id="4_mmdvd"]
 
 [node name="World" type="CanvasLayer" groups=["world"]]
 follow_viewport_enabled = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-limit_left = -5000
-limit_top = -5000
-limit_right = 5000
-limit_bottom = 5000
-editor_draw_limits = true
+[node name="ControlledCamera" type="Camera2D" parent="."]
 script = ExtResource("1_mmdvd")
+metadata/_custom_type_script = "uid://ca4hqlffy4xdb"
 
 [node name="VisibilityManager" type="Polygon2D" parent="." groups=["visibility_manager"]]
-clip_children = 1
 script = ExtResource("2_h5o24")
-enabled = false
+metadata/_custom_type_script = "uid://chqh6sgj67n0f"
 
-[node name="BaseArena" parent="VisibilityManager" instance=ExtResource("4_mmdvd")]
+[node name="Arena1" parent="VisibilityManager" instance=ExtResource("4_mmdvd")]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("uid://ma84hi2ae2bs")
+_spawnable_scenes = PackedStringArray("res://robot/MVP/laser_bot.tscn")
 spawn_path = NodePath("../VisibilityManager")

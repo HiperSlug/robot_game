@@ -2,6 +2,12 @@ extends Area2D
 class_name ActionEmitter
 
 
+@onready var nav: NavManagerComp = await CompGetter.new(
+	self.get_parent(),
+	Globals.Comp.NAV_MANAGER,
+	CompGetter.FIRST,
+).ready
+
 var receivers: Array = []
 
 func _on_area_entered(area: Area2D) -> void:
@@ -16,11 +22,3 @@ func _on_area_exited(area: Area2D) -> void:
 		receivers.erase(area)
 		
 		area.stop_receiving()
-
-
-var nav: NavHandlerComp = null
-@onready var comp_base: CompBase = $CompBase
-
-
-func get_sib() -> void:
-	nav = comp_base.get_first_sib_group("nav_handler_comp")

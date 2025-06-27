@@ -1,4 +1,4 @@
 extends Node
 class_name EngineComp
 
-@export var speed: float = 30
+@export var speed: float = 50

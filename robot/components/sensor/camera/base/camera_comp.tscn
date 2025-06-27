@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://w1o81acr4vcw" path="res://robot/components/sensor/camera/base/camera_comp.gd" id="1_adb5m"]
 [ext_resource type="PackedScene" uid="uid://jq46xrqlumkp" path="res://robot/components/sensor/camera/base/camera_cone.tscn" id="2_a326b"]
 
-[node name="CameraComp" type="Area2D" groups=["camera_comp", "component"]]
+[node name="CameraComp" type="Area2D" groups=["camera_comp"]]
 script = ExtResource("1_adb5m")
 
 [node name="Polygon" parent="." instance=ExtResource("2_a326b")]

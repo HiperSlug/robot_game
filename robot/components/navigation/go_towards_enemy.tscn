@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://fuse83aijhfk"]
+[gd_scene load_steps=2 format=3 uid="uid://c8fmiiujjqsw2"]
 
-[ext_resource type="Script" uid="uid://c3vlrd4d4ilgy" path="res://robot/MVP/go_towards_enemy.gd" id="1_gdjbg"]
+[sub_resource type="GDScript" id="GDScript_5i6y7"]
+script/source = "extends NavigationAgent2D
 
-[node name="GoTowardsEnemy" type="NavigationAgent2D" groups=["navigation_comp"]]
-script = ExtResource("1_gdjbg")
+@onready var robot: CharacterBody2D = self.get_parent()
+
+func _direction() -> Vector2:
+	target_position = get_tree().get_first_node_in_group(\"target\").global_position
+	
+	if is_navigation_finished():
+		return Vector2.ZERO
+	
+	
+	return robot.global_position.direction_to(get_next_path_position())
+"
+
+[node name="GoTowardsEnemy" type="NavigationAgent2D" groups=["nav_comp"]]
+script = SubResource("GDScript_5i6y7")

@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfm3iesx1icy7"]
-
-[ext_resource type="Script" uid="uid://clisfefw0pts6" path="res://robot/components/damage/health/death/death_comp.gd" id="1_6lxxx"]
-[ext_resource type="PackedScene" uid="uid://w4ost6rfsmwv" path="res://robot/components/comp_base.tscn" id="2_d6w64"]
-
-[node name="Death" type="Node" groups=["component", "death_comp"]]
-script = ExtResource("1_6lxxx")
-
-[node name="CompBase" parent="." instance=ExtResource("2_d6w64")]

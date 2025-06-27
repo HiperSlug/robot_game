@@ -55,6 +55,7 @@ func on_server_disconnected() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	# currently just keybindings
 	if event.is_action_pressed("network_client"):
 		create_client("localhost")
 	elif event.is_action_pressed("network_server"):

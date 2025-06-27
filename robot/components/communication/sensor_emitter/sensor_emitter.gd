@@ -2,13 +2,11 @@ extends Node
 class_name SensorEmitter
 
 @onready var visibility_manager: VisibilityManager = get_tree().get_first_node_in_group("visibility_manager")
-@onready var comp_base: CompBase = $CompBase
-
-var cam: CameraComp = null
-
-
-func get_sib() -> void:
-	cam = comp_base.get_first_sib_group("camera_comp")
+@onready var cam: CameraComp = await CompGetter.new(
+	self.get_parent(),
+	Globals.Comp.CAM, # TODO
+	CompGetter.FIRST,
+).ready
 
 func _physics_process(_delta: float) -> void:
 	if cam:
