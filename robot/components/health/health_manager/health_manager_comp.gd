@@ -11,7 +11,6 @@ signal zeroed()
 
 
 func change_health(amount: float) -> void:
-	print(amount)
 	if not is_multiplayer_authority():
 		print("client auth: healthhand")
 		return

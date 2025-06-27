@@ -21,10 +21,7 @@ func on_health_zeroed() -> void:
 
 @rpc("call_local")
 func game_over() -> void:
-	print("Game Over, TODO: Stop input go to MENU (TODO)")
-	get_tree().paused = true
-	await get_tree().create_timer(.5).timeout
-	get_tree().paused = false
+	print("Game over: TODO ADD SCREEN")
+	
 	Network.network_disconnect()
-	main.remove_scenes()
-	main.add_scene(MENU_SCENE)
+	main.end_match()

@@ -1,6 +1,8 @@
 extends Node
 # autoload: Network
 
+@onready var main: Main = get_tree().get_first_node_in_group("main")
+
 func _ready() -> void:
 	signals()
 
@@ -50,13 +52,8 @@ func on_connected_to_server() -> void:
 func on_connection_failed() -> void:
 	print("connection failed")
 
+
 func on_server_disconnected() -> void:
+	network_disconnect()
+	main.end_match()
 	print("server disconnected")
-
-
-func _input(event: InputEvent) -> void:
-	# currently just keybindings
-	if event.is_action_pressed("network_client"):
-		create_client("localhost")
-	elif event.is_action_pressed("network_server"):
-		create_server()
