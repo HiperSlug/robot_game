@@ -1,7 +1,7 @@
 extends Node
 class_name HealthManagerComp
 
-var health_components: Array[HealthComp] = await CompGetter.new(
+@onready var health_components: Array[Node] = await CompGetter.new(
 	self.get_parent(),
 	Globals.Comp.HEALTH,
 	CompGetter.ALL,
@@ -9,7 +9,9 @@ var health_components: Array[HealthComp] = await CompGetter.new(
 
 signal zeroed()
 
+
 func change_health(amount: float) -> void:
+	print(amount)
 	if not is_multiplayer_authority():
 		print("client auth: healthhand")
 		return

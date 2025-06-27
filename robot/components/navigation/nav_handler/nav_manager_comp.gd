@@ -14,6 +14,25 @@ class_name NavManagerComp
 	CompGetter.ALL,
 ).ready
 
+func _ready() -> void:
+	var navs: Array = await CompGetter.new(
+	self.get_parent(),
+	Globals.Comp.NAV,
+	CompGetter.ALL,
+	).ready
+	
+	for nav in navs:
+		push_func(nav._direction)
+	
+	var engines: Array = await CompGetter.new(
+		self.get_parent(),
+		Globals.Comp.ENGINE,
+		CompGetter.ALL,
+	).ready
+	
+	for engine in engines:
+		speed += engine.speed
+
 var speed: float = 0
 
 var funcs: Array[Callable]

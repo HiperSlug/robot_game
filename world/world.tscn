@@ -18,5 +18,5 @@ metadata/_custom_type_script = "uid://chqh6sgj67n0f"
 [node name="Arena1" parent="VisibilityManager" instance=ExtResource("4_mmdvd")]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://robot/MVP/laser_bot.tscn")
+_spawnable_scenes = PackedStringArray("uid://cgshd0rrowooc", "uid://bgmx8xiduqvom")
 spawn_path = NodePath("../VisibilityManager")

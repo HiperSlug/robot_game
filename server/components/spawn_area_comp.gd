@@ -1,8 +1,13 @@
 extends Area2D
 class_name SpawnAreaComp
 
-@export var team: Globals.Team
+@onready var server_team: TeamComp = await CompGetter.new(
+	self.get_parent(),
+	Globals.Comp.TEAM,
+	CompGetter.FIRST,
+).ready
 
+const TEAM_COMP = preload("res://robot/components/team/team_comp.tscn")
 
 var choosing: bool = false
 const SPAWN_CHOICE = preload("res://server/spawn/spawn_choice.tscn")
@@ -24,28 +29,31 @@ func spawn_choice(pos: Vector2) -> void:
 	current_choice = popup
 	popup.global_position = pos
 	popup.choice.connect(on_choice)
-	popup.mouse_exited.connect(cancell)
+	popup.mouse_exited.connect(cancel)
 
-func cancell() -> void:
+func cancel() -> void:
 	choosing = false
 
-func on_choice(scene: String) -> void:
+func on_choice(scene_path: String) -> void:
 	choosing = false
 	
 	if is_multiplayer_authority():
-		spawn(load(scene), current_choice.global_position, team)
-	
+		server_spawn(load(scene_path), current_choice.global_position, server_team.team)
 	else:
-		request_spawn.rpc_id(1, scene, current_choice.global_position, team)
+		request_spawn.rpc_id(1, scene_path, current_choice.global_position, server_team.team)
 
 @rpc("any_peer")
-func request_spawn(scene: String, pos: Vector2, team: Globals.Team) -> void:
-	print("Unsafe loading of scene")
-	spawn(load(scene), pos, team)
+func request_spawn(scene_path: String, pos: Vector2, team: Globals.Team) -> void:
+	print("validate")
+	server_spawn(load(scene_path), pos, team)
 
-func spawn(scene: PackedScene, pos: Vector2, team: Globals.Team) -> void:
-	var robot: Bot = scene.instantiate()
-	robot.set_team(team)
+func server_spawn(scene: PackedScene, pos: Vector2, team: Globals.Team) -> void:
+	var robot: CharacterBody2D = scene.instantiate()
+	
+	var team_comp := TEAM_COMP.instantiate()
+	print(team)
+	team_comp.team = team
+	robot.add_child(team_comp, true)
 	
 	get_tree().get_first_node_in_group("visibility_manager").add_child(robot, true)
 	robot.global_position = pos

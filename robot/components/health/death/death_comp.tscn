@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://clisfefw0pts6" path="res://robot/components/health/death/death_comp.gd" id="1_6lxxx"]
 
-[node name="Death" type="Node" groups=["death_comp"]]
+[node name="DeathComp" type="Node" groups=["death_comp"]]
 script = ExtResource("1_6lxxx")

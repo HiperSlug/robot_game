@@ -43,4 +43,4 @@ shape = SubResource("CircleShape2D_dsigu")
 [node name="HealthComp" parent="." instance=ExtResource("5_ad5v5")]
 health = 10.0
 
-[node name="Death" parent="." instance=ExtResource("6_83ke2")]
+[node name="DeathComp" parent="." instance=ExtResource("6_83ke2")]

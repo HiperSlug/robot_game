@@ -8,7 +8,7 @@
 
 [node name="LaserRobot" instance=ExtResource("1_60lvy")]
 
-[node name="Laser" parent="." index="8" instance=ExtResource("2_0b3w3")]
+[node name="LaserComp" parent="." index="8" instance=ExtResource("2_0b3w3")]
 
 [node name="EngineComp" parent="." index="9" instance=ExtResource("3_iqmg5")]
 

@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccx2helx5hgs2"]
+[gd_scene load_steps=8 format=3 uid="uid://ccx2helx5hgs2"]
 
-[ext_resource type="Script" uid="uid://cncuddlbnt6au" path="res://server/server.gd" id="1_87v45"]
 [ext_resource type="Texture2D" uid="uid://dlg1xdlo764kv" path="res://server/server.png" id="2_er2ig"]
 [ext_resource type="PackedScene" uid="uid://bjvhbfrv0kbow" path="res://robot/components/health/health_manager/health_manager_comp.tscn" id="2_g1lh6"]
 [ext_resource type="PackedScene" uid="uid://dw7r3dxftykog" path="res://robot/components/health/health/health_comp.tscn" id="3_g1lh6"]
@@ -12,8 +11,6 @@
 radius = 16.0
 
 [node name="Server" type="StaticBody2D"]
-script = ExtResource("1_87v45")
-team = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_st8xy")
@@ -24,11 +21,11 @@ texture = ExtResource("2_er2ig")
 [node name="HealthHandlerComp" parent="." instance=ExtResource("2_g1lh6")]
 
 [node name="HealthComp" parent="." instance=ExtResource("3_g1lh6")]
+health = 10.0
 
 [node name="ServerDeathComp" parent="." instance=ExtResource("4_t43u5")]
 
 [node name="SpawnAreaComp" parent="." instance=ExtResource("5_87v45")]
-team = null
 
 [node name="HurtboxComp" parent="." instance=ExtResource("8_it51r")]
 

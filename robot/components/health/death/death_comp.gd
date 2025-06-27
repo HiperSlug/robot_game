@@ -1,12 +1,13 @@
 extends Node
 class_name DeathComp
 
-@onready var robot = $".."
-@onready var health_manager: HealthManagerComp = await CompGetter.new(
-	self.get_parent(),
-	Globals.Comp.HEALTH_MANAGER,
-	CompGetter.FIRST,
-).ready
+@onready var robot = self.get_parent()
+func _ready() -> void: 
+	(await CompGetter.new(
+		self.get_parent(),
+		Globals.Comp.HEALTH_MANAGER,
+		CompGetter.FIRST,
+	).ready).zeroed.connect(on_health_zeroed)
 
 
 func on_health_zeroed() -> void:

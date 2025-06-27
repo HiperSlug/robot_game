@@ -14,7 +14,7 @@ properties/0/path = NodePath(".:length")
 properties/0/spawn = true
 properties/0/replication_mode = 1
 
-[node name="Laser" type="Node2D" groups=["weapon_comp"]]
+[node name="LaserComp" type="Node2D" groups=["weapon_comp"]]
 script = ExtResource("1_rtor7")
 offset_y = -25.5
 metadata/_edit_horizontal_guides_ = [-34.0]

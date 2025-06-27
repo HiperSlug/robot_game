@@ -31,11 +31,11 @@ func _process(_delta: float) -> void:
 
 const ROBOT = preload("res://robot/robot.tscn")
 func create_robot(pos: Vector2) -> void:
-	var robot: Robot = ROBOT.instantiate()
+	var robot: CharacterBody2D = ROBOT.instantiate()
 	for componenet: Component in components:
 		var comp = componenet.scene.instantiate()
-		robot.add_child(comp)
-	get_tree().get_first_node_in_group("visibility_manager").add_child(robot)
+		robot.add_child(comp, true)
+	get_tree().get_first_node_in_group("visibility_manager").add_child(robot, true)
 	robot.global_position = pos
 	
 	queue_free()

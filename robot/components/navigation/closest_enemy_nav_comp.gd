@@ -30,6 +30,8 @@ func _direction() -> Vector2:
 	return dir
 
 func get_closest_enemy_position():
+	if not team:
+		return null
 	var enemies := get_tree().get_nodes_in_group(team.enemy_group())
 	if enemies.size() == 0:
 		return null

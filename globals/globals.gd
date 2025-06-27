@@ -11,10 +11,10 @@ const TEAM_NAMES := {
 	Team.TWO: &"team_2",
 }
 
-static func team_group(team: Team) -> StringName:
+func team_group(team: Team) -> StringName:
 	return TEAM_NAMES[team]
 
-static func enemy(team: Team) -> Team:
+func enemy(team: Team) -> Team:
 	match team:
 		Team.ONE:
 			return Team.TWO
@@ -47,5 +47,5 @@ const COMP_NAMES := {
 	Comp.TEAM: &"team_comp",
 }
 
-static func group(comp: Comp) -> StringName:
+func group(comp: Comp) -> StringName:
 	return COMP_NAMES[comp]
