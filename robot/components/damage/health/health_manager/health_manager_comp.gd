@@ -11,6 +11,10 @@ func get_sib() -> void:
 	health_components = comp_base.get_sibs_group("health_comp")
 
 func change_health(amount: float) -> void:
+	if not is_multiplayer_authority():
+		print("client auth: healthhand")
+		return
+	
 	for comp: HealthComp in health_components:
 		if not comp.is_zero():
 			if is_zero_approx(amount):

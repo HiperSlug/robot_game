@@ -14,9 +14,18 @@ func get_sib() -> void:
 		health_manager.zeroed.connect(on_health_zeroed)
 
 func on_health_zeroed() -> void:
-	print("Game Over")
+	if not is_multiplayer_authority():
+		print("client auth: death")
+		return
+	
+	game_over.rpc()
+
+@rpc("call_local")
+func game_over() -> void:
+	print("Game Over, TODO: Stop input go to MENU (TODO)")
 	get_tree().paused = true
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(.5).timeout
 	get_tree().paused = false
+	Network.network_disconnect()
 	main.remove_scenes()
 	main.add_scene(MENU_SCENE)

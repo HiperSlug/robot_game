@@ -11,12 +11,21 @@ func add_exception(exception: HurtboxComp) -> void:
 var overlaps: Array[HurtboxComp] = []
 
 func _on_area_entered(area: Area2D) -> void:
+	if not is_multiplayer_authority():
+		return
+	
 	if area is HurtboxComp:
+		if area in exceptions:
+			return
+		
 		overlaps.append(area)
-
+		
 		enter(area)
 
 func _on_area_exited(area: Area2D) -> void:
+	if not is_multiplayer_authority():
+		return
+	
 	if area is HurtboxComp:
 		overlaps.erase(area)
 
@@ -28,6 +37,9 @@ func _on_area_exited(area: Area2D) -> void:
 @onready var timer: Timer = $Timer
 
 func _ready() -> void:
+	if not is_multiplayer_authority():
+		return
+	
 	if not is_zero_approx(dps):
 		timer.wait_time = tick_time
 		timer.start()
@@ -38,8 +50,12 @@ func _on_timer_timeout() -> void:
 
 
 func enter(hurtbox: HurtboxComp) -> void:
+	if not is_multiplayer_authority():
+		return
 	hurtbox.damage(enter_dmg)
 
 func inside(hurtboxes: Array[HurtboxComp]) -> void:
+	if not is_multiplayer_authority():
+		return
 	for hurtbox in hurtboxes:
 		hurtbox.damage(dps * tick_time)

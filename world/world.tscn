@@ -1,29 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddjaptg1tbkps"]
+[gd_scene load_steps=4 format=3 uid="uid://ddjaptg1tbkps"]
 
 [ext_resource type="Script" uid="uid://ca4hqlffy4xdb" path="res://world/camera_2d.gd" id="1_mmdvd"]
 [ext_resource type="Script" uid="uid://chqh6sgj67n0f" path="res://world/visibility_manager.gd" id="2_h5o24"]
 [ext_resource type="PackedScene" uid="uid://bm8hkybc0j55f" path="res://arenas/base_arena.tscn" id="4_mmdvd"]
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4717r"]
-properties/0/path = NodePath("World/Camera2D:position")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_4717r"]
-
-[node name="World" type="Node"]
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_4717r")
-
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-spawn_path = NodePath("../World/VisibilityManager")
-
-[node name="World" type="CanvasLayer" parent="." groups=["world"]]
-layer = 2
+[node name="World" type="CanvasLayer" groups=["world"]]
 follow_viewport_enabled = true
 
-[node name="Camera2D" type="Camera2D" parent="World"]
+[node name="Camera2D" type="Camera2D" parent="."]
 limit_left = -5000
 limit_top = -5000
 limit_right = 5000
@@ -31,17 +15,13 @@ limit_bottom = 5000
 editor_draw_limits = true
 script = ExtResource("1_mmdvd")
 
-[node name="VisibilityManager" type="Polygon2D" parent="World" groups=["visibility_manager"]]
+[node name="VisibilityManager" type="Polygon2D" parent="." groups=["visibility_manager"]]
 clip_children = 1
 script = ExtResource("2_h5o24")
 enabled = false
 
-[node name="BaseArena" parent="World/VisibilityManager" instance=ExtResource("4_mmdvd")]
+[node name="BaseArena" parent="VisibilityManager" instance=ExtResource("4_mmdvd")]
 
-[node name="Node2D" type="StaticBody2D" parent="World" groups=["enemy"]]
-position = Vector2(571, 161)
-collision_layer = 8
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Node2D"]
-shape = SubResource("CircleShape2D_4717r")
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://ma84hi2ae2bs")
+spawn_path = NodePath("../VisibilityManager")

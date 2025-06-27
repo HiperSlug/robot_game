@@ -13,7 +13,7 @@ func update_visibility(vis_polygon: PackedVector2Array) -> void:
 				)))
 	
 	_polygon.append_array(vis_polygon)
-	
+
 
 func _physics_process(_delta: float) -> void:
 	if not enabled:

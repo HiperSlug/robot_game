@@ -1,8 +1,8 @@
 extends Button
 class_name SceneButton
 
-@export var scene: PackedScene
-signal scn_pressed(scene: PackedScene)
+@export_file("*.tscn") var scene: String
+signal scn_pressed(scene: String)
 
 
 func _pressed() -> void:

@@ -1,6 +1,10 @@
 extends Area2D
 
 func _direction() -> Vector2:
+	if not is_multiplayer_authority():
+		print("client auth: strafe_nav")
+		return Vector2.ZERO
+	
 	var pos = get_closest_enemy_pos()
 	if pos == null:
 		
@@ -16,13 +20,13 @@ func _direction() -> Vector2:
 var enemies: Array[Node] = []
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemy"):
+	if body.is_in_group($"..".enemy_group()):
 		enemies.append(body)
 		if timer.is_stopped():
 			timer.start(randf_range(min_swap_time, max_swap_time))
 
 func _on_body_exited(body: Node2D) -> void:
-	if body.is_in_group("enemy"):
+	if body.is_in_group($"..".enemy_group()):
 		enemies.erase(body)
 		if enemies.size() == 0:
 			timer.stop()

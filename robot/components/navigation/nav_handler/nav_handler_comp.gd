@@ -21,6 +21,9 @@ var navs: Array
 var engines: Array
 
 func _physics_process(delta: float) -> void:
+	if not is_multiplayer_authority():
+		return
+	
 	
 	var dir := get_direction()
 	

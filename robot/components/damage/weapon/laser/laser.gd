@@ -11,14 +11,19 @@ class_name Laser
 		distance = val
 		ray_cast_2d.target_position = Vector2(0, -distance)
 
+@export var length: float = 0.0 # synched
+
 func _process(_delta: float) -> void:
-	var length := maxf(get_length(), abs(offset_y))
+	if is_multiplayer_authority():
+		length = get_length()
 	
-	laser.region_rect.size.y = length + offset_y
-	laser.position.y = - length / 2  + offset_y / 2
+	var clipped_len := maxf(length, - offset_y)
 	
-	collision_shape_2d.shape.size.y = length  + offset_y
-	collision_shape_2d.position.y = - length / 2  + offset_y / 2
+	laser.region_rect.size.y = clipped_len + offset_y
+	laser.position.y = - clipped_len / 2  + offset_y / 2
+	
+	collision_shape_2d.shape.size.y = clipped_len  + offset_y
+	collision_shape_2d.position.y = - clipped_len / 2  + offset_y / 2
 
 
 func get_length() -> float:

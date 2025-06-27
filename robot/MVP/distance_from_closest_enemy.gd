@@ -12,7 +12,8 @@ func _direction() -> Vector2:
 	if closest_pos == null:
 		return Vector2.ZERO
 	
-	if is_target_reached():
+	
+	if is_target_reached() and closest_pos.distance_squared_to($"..".global_position) < distance ** 2:
 		return Vector2.ZERO
 	
 	target_position = closest_pos
@@ -21,7 +22,7 @@ func _direction() -> Vector2:
 	return dir
 
 func get_closest_enemy_position():
-	var enemies := get_tree().get_nodes_in_group("enemy")
+	var enemies := get_tree().get_nodes_in_group($"..".enemy_group())
 	if enemies.size() == 0:
 		return null
 	

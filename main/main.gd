@@ -9,4 +9,4 @@ func add_scene(scene_path: String) -> void:
 	var scene = load(scene_path)
 	if scene is PackedScene:
 		var node = scene.instantiate()
-		add_child(node)
+		add_child(node, true)

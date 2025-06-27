@@ -19,7 +19,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_j6wqt"]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 33
 physics_layer_0/collision_mask = 0
 sources/2 = SubResource("TileSetAtlasSource_nr14o")
 
@@ -36,5 +36,11 @@ tile_set = SubResource("TileSet_j6wqt")
 [node name="Server" parent="." instance=ExtResource("2_klvm3")]
 position = Vector2(573, 844)
 
+[node name="SpawnAreaComp" parent="Server" index="5"]
+team = 1
+
 [node name="Server2" parent="." instance=ExtResource("2_klvm3")]
 position = Vector2(-649, 156)
+
+[editable path="Server"]
+[editable path="Server2"]

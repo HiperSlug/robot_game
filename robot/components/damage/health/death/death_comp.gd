@@ -11,4 +11,8 @@ func get_sib() -> void:
 	health_handler_comp.zeroed.connect(on_health_zeroed)
 
 func on_health_zeroed() -> void:
+	if not is_multiplayer_authority():
+		print("client auth: death comp")
+		return
+	
 	robot.queue_free() # and presumably an animation and drop and stuff
