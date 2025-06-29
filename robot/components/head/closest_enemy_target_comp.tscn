@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4st2idvqoeq5"]
 
-[ext_resource type="Script" uid="uid://bd5rfctrilu2g" path="res://robot/components/head/head.gd" id="1_hppwm"]
+[ext_resource type="Script" uid="uid://bd5rfctrilu2g" path="res://robot/components/head/closest_enemy_target_comp.gd" id="1_hppwm"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hppwm"]
 properties/0/path = NodePath(".:rotation")
 properties/0/spawn = true
 properties/0/replication_mode = 1
 
-[node name="HeadComp" type="Marker2D" groups=["head_comp"]]
+[node name="ClosestEnemyTargetComp" type="Marker2D" groups=["head_comp"]]
 script = ExtResource("1_hppwm")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]

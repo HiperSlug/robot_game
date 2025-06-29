@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ccx2helx5hgs2"]
+[gd_scene load_steps=7 format=3 uid="uid://ccx2helx5hgs2"]
 
 [ext_resource type="Texture2D" uid="uid://dlg1xdlo764kv" path="res://server/server.png" id="2_er2ig"]
 [ext_resource type="PackedScene" uid="uid://bjvhbfrv0kbow" path="res://robot/components/health/health_manager/health_manager_comp.tscn" id="2_g1lh6"]
 [ext_resource type="PackedScene" uid="uid://dw7r3dxftykog" path="res://robot/components/health/health/health_comp.tscn" id="3_g1lh6"]
-[ext_resource type="PackedScene" uid="uid://b0ml3sjtbeltd" path="res://server/components/server_death_comp.tscn" id="4_t43u5"]
 [ext_resource type="PackedScene" uid="uid://kk8y0t2k30y3" path="res://server/components/spawn_area_comp.tscn" id="5_87v45"]
 [ext_resource type="PackedScene" uid="uid://cm06qa2uebv75" path="res://robot/components/health/hurtbox/hurtbox_comp.tscn" id="8_it51r"]
 
@@ -23,7 +22,14 @@ texture = ExtResource("2_er2ig")
 [node name="HealthComp" parent="." instance=ExtResource("3_g1lh6")]
 health = 10.0
 
-[node name="ServerDeathComp" parent="." instance=ExtResource("4_t43u5")]
+[node name="HealthComp2" parent="." instance=ExtResource("3_g1lh6")]
+health = 10.0
+
+[node name="HealthComp3" parent="." instance=ExtResource("3_g1lh6")]
+health = 10.0
+
+[node name="HealthComp4" parent="." instance=ExtResource("3_g1lh6")]
+health = 10.0
 
 [node name="SpawnAreaComp" parent="." instance=ExtResource("5_87v45")]
 
