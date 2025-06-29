@@ -55,7 +55,7 @@ func stop_override() -> void:
 	override = false
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if not is_multiplayer_authority():
 		return
 	
@@ -63,9 +63,9 @@ func _physics_process(delta: float) -> void:
 	var dir := get_direction()
 	
 	robot.velocity = speed * dir
-	if dir != Vector2.ZERO:
-		
-		robot.rotation = lerp_angle(robot.rotation, dir.angle() + (TAU/4) , TAU  * delta)
+	#if dir != Vector2.ZERO:
+		#
+		#robot.rotation = lerp_angle(robot.rotation, dir.angle() + (TAU/4) , TAU  * delta)
 		#robot.rotation = dir.angle() + (TAU / 4)
 	robot.move_and_slide()
 

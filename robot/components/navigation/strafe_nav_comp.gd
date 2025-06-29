@@ -21,6 +21,9 @@ func _direction() -> Vector2:
 var enemies: Array[Node] = []
 
 func _on_body_entered(body: Node2D) -> void:
+	if not is_multiplayer_authority():
+		return
+	
 	if not team_getter.is_ready:
 		await team_getter.ready
 	if body.is_in_group(team_getter.first().enemy_group()):
@@ -29,6 +32,8 @@ func _on_body_entered(body: Node2D) -> void:
 			timer.start(randf_range(min_swap_time, max_swap_time))
 
 func _on_body_exited(body: Node2D) -> void:
+	if not is_multiplayer_authority():
+		return
 	if not team_getter.is_ready:
 		await team_getter.ready
 	if body.is_in_group(team_getter.first().enemy_group()):

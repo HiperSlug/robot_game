@@ -36,6 +36,8 @@ enum Comp {
 	NAV_MANAGER,
 	WEAPON,
 	TEAM,
+	CLOSEST_ENEMY_POS,
+	HEAD,
 }# TODO Communication, Sensor
 
 const COMP_NAMES := {
@@ -48,6 +50,8 @@ const COMP_NAMES := {
 	Comp.NAV_MANAGER: &"nav_manager_comp",
 	Comp.WEAPON: &"weapon_comp",
 	Comp.TEAM: &"team_comp",
+	Comp.CLOSEST_ENEMY_POS: &"closest_enemy_pos_comp",
+	Comp.HEAD: &"head_comp",
 }
 
 func group(comp: Comp) -> StringName:
