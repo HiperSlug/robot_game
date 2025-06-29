@@ -7,6 +7,12 @@ class_name HurtboxComp
 	CompGetter.FIRST,
 ).ready
 
+@onready var team: TeamComp = await CompGetter.new(
+	self.get_parent(),
+	Globals.Comp.TEAM,
+	CompGetter.FIRST,
+).ready
+
 func damage(dmg: float) -> void:
 	if not is_multiplayer_authority():
 		print("client auth: hurtbox")

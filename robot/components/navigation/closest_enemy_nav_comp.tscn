@@ -4,4 +4,7 @@
 
 [node name="ClosestEnemyComp" type="NavigationAgent2D" groups=["nav_comp"]]
 target_desired_distance = 180.0
+avoidance_enabled = true
+radius = 16.0
+debug_enabled = true
 script = ExtResource("1_kt04k")
