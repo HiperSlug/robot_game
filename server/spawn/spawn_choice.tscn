@@ -21,9 +21,18 @@ script = ExtResource("2_36w3f")
 scene = "uid://bgmx8xiduqvom"
 metadata/_custom_type_script = "uid://b7i3yfc6o7ihr"
 
+[node name="SceneButton2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+text = "RIFLE"
+script = ExtResource("2_36w3f")
+scene = "uid://c4cv2eqfqnv6o"
+metadata/_custom_type_script = "uid://b7i3yfc6o7ihr"
+
 [node name="TeamRot" type="Node" parent="."]
 script = ExtResource("3_2rs3c")
 metadata/_custom_type_script = "uid://rxqntcp31gj7"
 
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="scn_pressed" from="HBoxContainer/SceneButton" to="." method="_on_scene_button_scn_pressed"]
+[connection signal="scn_pressed" from="HBoxContainer/SceneButton2" to="." method="_on_scene_button_scn_pressed"]

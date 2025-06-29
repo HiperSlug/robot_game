@@ -39,5 +39,3 @@ health = 10.0
 [node name="ClosestEnemyPosComp" parent="." index="18" instance=ExtResource("7_iqmg5")]
 
 [node name="ClosestEnemyTargetComp" parent="." index="19" instance=ExtResource("6_iqmg5")]
-
-[node name="Node" type="Node" parent="." index="20"]

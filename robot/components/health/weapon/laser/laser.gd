@@ -22,7 +22,6 @@ class_name Laser
 
 @export var length: float = 0.0 # synched
 
-@export var loss: float = 1.0 # m/s
 
 func _ready() -> void:
 	deactive()

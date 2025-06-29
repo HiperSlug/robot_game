@@ -2,6 +2,8 @@ extends Area2D
 class_name Hitbox
 
 
+signal entered(hurtbox: HurtboxComp)
+
 var exceptions: Array[HurtboxComp] = []
 
 func add_exception(exception: HurtboxComp) -> void:
@@ -53,6 +55,7 @@ func enter(hurtbox: HurtboxComp) -> void:
 	if not is_multiplayer_authority():
 		return
 	hurtbox.damage(enter_dmg)
+	entered.emit(hurtbox)
 
 func inside(hurtboxes: Array[HurtboxComp]) -> void:
 	if not is_multiplayer_authority():
