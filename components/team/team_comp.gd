@@ -13,10 +13,11 @@ func inject_dependencies(dict: Dictionary) -> void:
 	if not target:
 		printerr("Unable to assign target.")
 	
-	set_group()
+	if is_multiplayer_authority():
+		set_group()
 
 func set_group() -> void:
-	if target:
+	if target and team != Team.NONE:
 		target.remove_from_group(Team.enemy_group(team))
 		target.remove_from_group(Team.team_group(team))
 		target.add_to_group(Team.team_group(team))
@@ -26,7 +27,6 @@ func set_group() -> void:
 func _ready() -> void:
 	if team_override != -1:
 		team = team_override
-
 
 func enemy_group() -> StringName:
 	return Team.enemy_group(team)

@@ -18,4 +18,6 @@ func _physics_process(_delta: float) -> void:
 		queue_free()
 
 func _on_hitbox_entered(_hurtbox: HurtboxComp) -> void:
+	if not is_multiplayer_authority():
+		return
 	queue_free()

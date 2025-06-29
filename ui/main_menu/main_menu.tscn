@@ -243,6 +243,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Host/PanelContainer/VBoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Host/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
@@ -258,7 +259,7 @@ placeholder_text = "none"
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
-text = "Host"
+text = "Host Local"
 
 [node name="Join" type="ColorRect" parent="."]
 visible = false
@@ -279,9 +280,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -125.0
+offset_left = -185.0
 offset_top = -54.0
-offset_right = 126.0
+offset_right = 186.0
 offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2

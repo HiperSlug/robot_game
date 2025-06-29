@@ -10,7 +10,7 @@ func inject_dependencies(dict: Dictionary[StringName, Variant]) -> void:
 			team = arr[0]
 	
 	if not team:
-		printerr("Unable to assign team")
+		printerr("Unable to assign team: " + str(is_multiplayer_authority()))
 
 var closest # its so nakey
 

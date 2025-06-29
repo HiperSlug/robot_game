@@ -12,7 +12,6 @@ func inject_dependencies(dict: Dictionary[StringName, Variant]) -> void:
 	if not team:
 		printerr("Unable to assign team")
 
-const TEAM_COMP = preload("res://components/team/team_comp.tscn")
 const SPAWN_CHOICE = preload("res://ui/spawn/spawn_choice.tscn")
 
 var current_choice: Control
@@ -52,11 +51,9 @@ func request_spawn(scene_path: String, pos: Vector2, team: int) -> void:
 	server_spawn(load(scene_path), pos, team)
 
 func server_spawn(scene: PackedScene, pos: Vector2, team: int) -> void:
-	var robot: CharacterBody2D = scene.instantiate()
+	var robot: Robot = scene.instantiate()
 	
-	var team_comp := TEAM_COMP.instantiate()
-	team_comp.team = team
-	robot.add_child(team_comp, true)
+	robot.team.team = team
 	
 	get_tree().get_first_node_in_group("visibility_manager").add_child(robot, true)
 	robot.global_position = pos

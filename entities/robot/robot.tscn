@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgshd0rrowooc"]
+[gd_scene load_steps=11 format=3 uid="uid://cgshd0rrowooc"]
 
 [ext_resource type="Texture2D" uid="uid://cbrck8rew1xi7" path="res://entities/robot/robot_base.png" id="1_ad5v5"]
 [ext_resource type="Script" uid="uid://cmgo1nd36vgie" path="res://entities/robot/robot.gd" id="1_lgxb1"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dw7r3dxftykog" path="res://components/health/health/health_comp.tscn" id="5_ad5v5"]
 [ext_resource type="PackedScene" uid="uid://cm06qa2uebv75" path="res://components/hurtbox/hurtbox_comp.tscn" id="5_h8mux"]
 [ext_resource type="PackedScene" uid="uid://cfm3iesx1icy7" path="res://components/health/death/death_comp.tscn" id="6_83ke2"]
+[ext_resource type="PackedScene" uid="uid://c63drn6n2u4jg" path="res://components/team/team_comp.tscn" id="8_lgxb1"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_abor7"]
 properties/0/path = NodePath(".:position")
@@ -19,10 +20,11 @@ properties/1/replication_mode = 1
 [sub_resource type="CircleShape2D" id="CircleShape2D_dsigu"]
 radius = 16.0
 
-[node name="Robot" type="CharacterBody2D"]
+[node name="Robot" type="CharacterBody2D" node_paths=PackedStringArray("team")]
 collision_layer = 8
 collision_mask = 9
 script = ExtResource("1_lgxb1")
+team = NodePath("TeamComp")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_abor7")
@@ -32,6 +34,9 @@ shape = SubResource("CircleShape2D_dsigu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ad5v5")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+spawn_path = NodePath("..")
 
 [node name="HurtboxComp" parent="." instance=ExtResource("5_h8mux")]
 
@@ -45,3 +50,5 @@ shape = SubResource("CircleShape2D_dsigu")
 [node name="HealthComp" parent="." instance=ExtResource("5_ad5v5")]
 
 [node name="DeathComp" parent="." instance=ExtResource("6_83ke2")]
+
+[node name="TeamComp" parent="." instance=ExtResource("8_lgxb1")]

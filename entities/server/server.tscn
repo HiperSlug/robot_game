@@ -11,6 +11,8 @@
 radius = 16.0
 
 [node name="Server" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 0
 script = ExtResource("1_td465")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
