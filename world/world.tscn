@@ -24,5 +24,5 @@ metadata/_custom_type_script = "uid://chqh6sgj67n0f"
 [node name="Arena1" parent="VisibilityManager" instance=ExtResource("4_mmdvd")]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("uid://cgshd0rrowooc", "uid://bgmx8xiduqvom", "uid://c4cv2eqfqnv6o", "uid://cjew0jmqhses0")
+_spawnable_scenes = PackedStringArray("uid://cgshd0rrowooc", "uid://bgmx8xiduqvom", "uid://c4cv2eqfqnv6o", "uid://cjew0jmqhses0", "uid://bm5k8quucdl7r")
 spawn_path = NodePath("../VisibilityManager")
