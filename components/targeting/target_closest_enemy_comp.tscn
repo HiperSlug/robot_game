@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg3em01qv5rjh"]
+
+[ext_resource type="Script" uid="uid://byph5xndwe1t5" path="res://components/targeting/target_closest_enemy_comp.gd" id="1_dxor2"]
+
+[node name="TargetClosestEnemyComp" type="Node2D" groups=["target_comp"]]
+script = ExtResource("1_dxor2")

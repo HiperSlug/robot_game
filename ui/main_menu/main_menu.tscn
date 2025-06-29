@@ -119,7 +119,7 @@ offset_right = -16.0
 offset_bottom = 72.0
 grow_horizontal = 0
 theme_override_constants/align_to_largest_stylebox = 2
-text = "billl"
+text = "Raphael"
 icon = SubResource("ViewportTexture_joh67")
 alignment = 2
 

@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccx2helx5hgs2"]
+
+[ext_resource type="Script" uid="uid://cm3rsqlpkd3mo" path="res://entities/server/server.gd" id="1_td465"]
+[ext_resource type="Texture2D" uid="uid://dlg1xdlo764kv" path="res://entities/server/server.png" id="2_er2ig"]
+[ext_resource type="PackedScene" uid="uid://bjvhbfrv0kbow" path="res://components/health/health_manager/health_manager_comp.tscn" id="2_g1lh6"]
+[ext_resource type="PackedScene" uid="uid://dw7r3dxftykog" path="res://components/health/health/health_comp.tscn" id="3_g1lh6"]
+[ext_resource type="PackedScene" uid="uid://kk8y0t2k30y3" path="res://components/server/spawn_area/spawn_area_comp.tscn" id="5_87v45"]
+[ext_resource type="PackedScene" uid="uid://cm06qa2uebv75" path="res://components/hurtbox/hurtbox_comp.tscn" id="8_it51r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_st8xy"]
+radius = 16.0
+
+[node name="Server" type="StaticBody2D"]
+script = ExtResource("1_td465")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_st8xy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_er2ig")
+
+[node name="HealthHandlerComp" parent="." instance=ExtResource("2_g1lh6")]
+
+[node name="HealthComp" parent="." instance=ExtResource("3_g1lh6")]
+
+[node name="HealthComp2" parent="." instance=ExtResource("3_g1lh6")]
+
+[node name="HealthComp3" parent="." instance=ExtResource("3_g1lh6")]
+
+[node name="HealthComp4" parent="." instance=ExtResource("3_g1lh6")]
+
+[node name="SpawnAreaComp" parent="." instance=ExtResource("5_87v45")]
+
+[node name="HurtboxComp" parent="." instance=ExtResource("8_it51r")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HurtboxComp"]
+shape = SubResource("CircleShape2D_st8xy")

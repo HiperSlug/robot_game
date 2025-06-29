@@ -2,11 +2,10 @@
 
 [ext_resource type="Script" uid="uid://ca4hqlffy4xdb" path="res://world/controlled_camera.gd" id="1_mmdvd"]
 [ext_resource type="Script" uid="uid://chqh6sgj67n0f" path="res://world/visibility_manager.gd" id="2_h5o24"]
-[ext_resource type="Script" uid="uid://rxqntcp31gj7" path="res://world/team_rot.gd" id="2_mmdvd"]
-[ext_resource type="PackedScene" uid="uid://bm8hkybc0j55f" path="res://arenas/arena_1.tscn" id="4_mmdvd"]
+[ext_resource type="Script" uid="uid://rxqntcp31gj7" path="res://components/team/team_rot.gd" id="2_mmdvd"]
+[ext_resource type="PackedScene" uid="uid://bm8hkybc0j55f" path="res://world/arenas/arena_1.tscn" id="4_mmdvd"]
 
-[node name="World" type="CanvasLayer" groups=["world"]]
-follow_viewport_enabled = true
+[node name="World" type="Node2D" groups=["world"]]
 
 [node name="ControlledCamera" type="Camera2D" parent="."]
 ignore_rotation = false
@@ -24,5 +23,5 @@ metadata/_custom_type_script = "uid://chqh6sgj67n0f"
 [node name="Arena1" parent="VisibilityManager" instance=ExtResource("4_mmdvd")]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("uid://cgshd0rrowooc", "uid://bgmx8xiduqvom", "uid://c4cv2eqfqnv6o", "uid://cjew0jmqhses0", "uid://bm5k8quucdl7r")
+_spawnable_scenes = PackedStringArray("uid://cgshd0rrowooc", "uid://bgmx8xiduqvom", "uid://c4cv2eqfqnv6o", "uid://bm5k8quucdl7r")
 spawn_path = NodePath("../VisibilityManager")

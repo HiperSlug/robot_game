@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Network="*res://globals/network.gd"
 Globals="*res://globals/globals.gd"
+Main="*res://globals/main.gd"
 
 [debug]
 
@@ -31,9 +32,13 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg", "res:/
 [global_group]
 
 visibility_manager=""
-world=""
 team_1=""
 team_2=""
+weapon_comp=""
+nav_comp=""
+target_comp=""
+team_comp=""
+engine_comp=""
 
 [gui]
 

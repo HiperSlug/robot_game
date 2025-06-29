@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpp055yxrn5xq"]
+
+[ext_resource type="Script" uid="uid://r4asjocbs4w0" path="res://components/weapon/bomb/bomb_comp.gd" id="1_jf5j4"]
+[ext_resource type="Texture2D" uid="uid://c7wfyas6vtdr0" path="res://components/weapon/bomb/bomb.png" id="2_fr0ao"]
+
+[node name="BombComp" type="Node2D" groups=["weapon_comp"]]
+script = ExtResource("1_jf5j4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fr0ao")
+
+[node name="Cooldown" type="Timer" parent="."]
+one_shot = true

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cugedw3rnxl37"]
+
+[ext_resource type="Script" uid="uid://18616pwfej21" path="res://components/navigation/nav_manager/nav_manager_comp.gd" id="1_k1wwh"]
+
+[node name="NavManagerComp" type="Node" groups=["nav_manager_comp"]]
+script = ExtResource("1_k1wwh")

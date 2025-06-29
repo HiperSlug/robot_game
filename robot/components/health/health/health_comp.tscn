@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw7r3dxftykog"]
-
-[ext_resource type="Script" uid="uid://c76yelbynyrih" path="res://robot/components/health/health/health_comp.gd" id="1_8mi7j"]
-
-[node name="HealthComp" type="Node" groups=["health_comp"]]
-script = ExtResource("1_8mi7j")

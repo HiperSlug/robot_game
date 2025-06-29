@@ -14,7 +14,8 @@ func _on_join_pressed() -> void:
 
 
 func _on_freeplay_pressed() -> void:
-	print("TODO")
+	Network.offline()
+	Main.new_game()
 
 
 func _on_profile_pressed() -> void:

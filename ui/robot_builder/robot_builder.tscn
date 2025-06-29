@@ -1,0 +1,127 @@
+[gd_scene load_steps=8 format=3 uid="uid://d14sjf2tn8tpi"]
+
+[ext_resource type="Texture2D" uid="uid://0d08vljed4sa" path="res://icon.svg" id="1_knt8b"]
+[ext_resource type="Script" uid="uid://dhilvqkx783dc" path="res://ui/robot_builder/robot_builder.gd" id="1_qaxc5"]
+[ext_resource type="PackedScene" uid="uid://bberbbgooj7wy" path="res://ui/robot_builder/category/category.tscn" id="3_y6t8v"]
+[ext_resource type="PackedScene" uid="uid://bm1wcyu5swdje" path="res://ui/robot_builder/comp_button/comp_button_any.tscn" id="4_0566f"]
+[ext_resource type="Script" uid="uid://c4un5njdt7jgk" path="res://ui/robot_builder/comp_button/component.gd" id="5_0566f"]
+[ext_resource type="PackedScene" uid="uid://bcytf4knpeloh" path="res://components/communication_/action_emitter/action_emitter.tscn" id="5_kusqm"]
+
+[sub_resource type="Resource" id="Resource_kusqm"]
+resource_name = "Action Emitter"
+script = ExtResource("5_0566f")
+name = "Action Emitter"
+scene = ExtResource("5_kusqm")
+metadata/_custom_type_script = "uid://c4un5njdt7jgk"
+
+[node name="RobotBuilder" type="PanelContainer"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme_type_variation = &"GrayPanelContainer"
+script = ExtResource("1_qaxc5")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+drag_area_highlight_in_editor = true
+
+[node name="PanelContainer" type="PanelContainer" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"GrayPanelContainer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HSplitContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "ROBOT"
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_knt8b")
+
+[node name="Label" type="Label" parent="HSplitContainer/PanelContainer/VBoxContainer/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -9.0
+offset_right = 20.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "TEXTURE PREVIEW"
+
+[node name="HSeparator" type="HSeparator" parent="HSplitContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HSplitContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "COMPONENTS"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="FinishRobot" type="Button" parent="HSplitContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "DONE"
+
+[node name="PanelContainer2" type="PanelContainer" parent="HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"GrayPanelContainer"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/PanelContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/PanelContainer2/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "AVAILABLE COMPONENTS"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Category" parent="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer/VBoxContainer" instance=ExtResource("3_y6t8v")]
+layout_mode = 2
+title = "Communication"
+
+[node name="Label" parent="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer/VBoxContainer/Category/VBoxContainer" index="0"]
+text = "Communication"
+
+[node name="CompButtonAny" parent="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer/VBoxContainer/Category/VBoxContainer/VBoxContainer" index="0" instance=ExtResource("4_0566f")]
+layout_mode = 2
+component = SubResource("Resource_kusqm")
+
+[node name="CompButtonAny2" parent="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer/VBoxContainer/Category/VBoxContainer/VBoxContainer" index="1" instance=ExtResource("4_0566f")]
+layout_mode = 2
+component = SubResource("Resource_kusqm")
+
+[connection signal="pressed" from="HSplitContainer/PanelContainer/VBoxContainer/FinishRobot" to="." method="_on_finish_robot_pressed"]
+
+[editable path="HSplitContainer/PanelContainer2/ScrollContainer/VBoxContainer/VBoxContainer/Category"]

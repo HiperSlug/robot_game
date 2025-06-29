@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://chmaxn1wk2i4x"]
+
+[ext_resource type="Script" uid="uid://b8ryftn8vnea8" path="res://components/communication_/action_receiver/action_receiver.gd" id="1_5w1g8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5q1yg"]
+
+[node name="ActionReceiver" type="Area2D" groups=["communication_comp"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_5w1g8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5q1yg")

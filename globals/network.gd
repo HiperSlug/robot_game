@@ -3,9 +3,7 @@ extends Node
 
 const PORT := 8080
 
-@onready var main: Main = get_tree().get_first_node_in_group("main")
-
-var team: Globals.Team
+var team: int = Team.NONE
 
 var status: Status = Status.OFFLINE
 enum Status {
@@ -35,7 +33,7 @@ func host_match() -> void:
 	print("hosting")
 	
 	status = Status.WAITING_FOR_CLIENT
-	team = Globals.random_team()
+	team = Team.random_team()
 	
 	var peer := ENetMultiplayerPeer.new()
 	peer.create_server(PORT)
@@ -55,20 +53,22 @@ func offline() -> void:
 	
 	var peer := OfflineMultiplayerPeer.new()
 	multiplayer.multiplayer_peer = peer
+	
+	team = Team.NONE
 
 
 func on_peer_connected(id: int) -> void:
 	if status == Status.WAITING_FOR_CLIENT:
 		print("server <-> client")
 		status = Status.SERVER
-		server_to_client_start_game.rpc_id(id, Globals.enemy(team))
-		main.new_game()
+		server_to_client_start_game.rpc_id(id, Team.enemy(team))
+		Main.new_game()
 		return
 
 @rpc
 func server_to_client_start_game(_team: int) -> void:
-	team = _team as Globals.Team
-	main.new_game()
+	team = _team
+	Main.new_game()
 
 func on_connected_to_server() -> void:
 	if status == Status.WAITING_FOR_SERVER:
@@ -78,7 +78,7 @@ func on_connected_to_server() -> void:
 
 func on_peer_disconnected(id: int) -> void:
 	offline()
-	main.leave_game()
+	Main.leave_game()
 	print("{0}: disconnected".format([id]))
 
 func on_connection_failed() -> void:
