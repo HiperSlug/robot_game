@@ -32,7 +32,7 @@ func stop_dragging() -> void:
 	dragging = false
 
 func drag(relative: Vector2) -> void:
-	position -= relative / zoom
+	position -= (relative / zoom).rotated(rotation)
 
 
 @export var zoom_ratio: float = .2

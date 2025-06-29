@@ -33,4 +33,4 @@ func get_global_raycast_point() -> Vector2:
 	if ray_cast_2d.is_colliding():
 		return ray_cast_2d.get_collision_point()
 	
-	return ray_cast_2d.target_position + ray_cast_2d.global_position
+	return (ray_cast_2d.target_position.length() * Vector2.UP.rotated(global_rotation)) + ray_cast_2d.global_position

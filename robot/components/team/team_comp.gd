@@ -17,6 +17,5 @@ func friendly_group() -> StringName:
 func _ready() -> void:
 	if override:
 		team = team_override
-	
 	robot.remove_from_group(enemy_group())
 	robot.add_to_group(friendly_group())

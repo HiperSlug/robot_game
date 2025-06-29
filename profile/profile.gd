@@ -5,7 +5,6 @@ class_name Profile
 func set_display_name(new_name) -> void:
 	display_name = new_name
 
-
 const path: String = "user://profile.tres"
 
 func save() -> void:

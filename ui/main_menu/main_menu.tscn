@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://be5ehb5p15do1" path="res://ui/main_menu/profile_edit.gd" id="4_i5wg5"]
 [ext_resource type="Texture2D" uid="uid://coso6jxfse7iw" path="res://ui/ui_icons/profile.png" id="5_joh67"]
 [ext_resource type="Script" uid="uid://levu7hk8s356" path="res://ui/main_menu/host.gd" id="7_u184e"]
-[ext_resource type="Script" uid="uid://7vbcverqb7xf" path="res://ui/main_menu/exitable_overlay.gd" id="8_6mijq"]
+[ext_resource type="Script" uid="uid://7vbcverqb7xf" path="res://ui/main_menu/join.gd" id="8_6mijq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_joh67"]
 font = ExtResource("4_3c04x")
@@ -64,15 +64,15 @@ metadata/_custom_type_script = "uid://ca4hqlffy4xdb"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -500.5
-offset_top = -72.0
+offset_top = -135.756
 offset_right = 500.5
-offset_bottom = 72.0
+offset_bottom = 135.756
 grow_horizontal = 2
 grow_vertical = 2
 text = "DISPOSABLE"
@@ -119,6 +119,7 @@ offset_right = -16.0
 offset_bottom = 72.0
 grow_horizontal = 0
 theme_override_constants/align_to_largest_stylebox = 2
+text = "billl"
 icon = SubResource("ViewportTexture_joh67")
 alignment = 2
 

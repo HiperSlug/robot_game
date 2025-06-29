@@ -23,5 +23,5 @@ func on_health_zeroed() -> void:
 func game_over() -> void:
 	print("Game over: TODO ADD SCREEN")
 	
-	Network.network_disconnect()
-	main.end_match()
+	Network.offline()
+	main.leave_game()

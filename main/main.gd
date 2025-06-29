@@ -13,15 +13,16 @@ func add_scene(scene_path: String) -> void:
 		var node = scene.instantiate()
 		add_child(node, true)
 
-var world: CanvasLayer = null
+var world: Node = null
 const WORLD = preload("res://world/world.tscn")
-func create_match() -> void:
+func new_game() -> void:
 	if world:
 		world.queue_free()
 	world = WORLD.instantiate()
 	add_child(world, true)
+	main_menu.hide()
 
-func end_match() -> void:
+func leave_game() -> void:
 	if world:
 		world.queue_free()
 	main_menu.show()

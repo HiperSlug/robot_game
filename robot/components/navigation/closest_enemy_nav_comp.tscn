@@ -3,6 +3,5 @@
 [ext_resource type="Script" uid="uid://h65fgmp6fgtq" path="res://robot/components/navigation/closest_enemy_nav_comp.gd" id="1_kt04k"]
 
 [node name="ClosestEnemyComp" type="NavigationAgent2D" groups=["nav_comp"]]
-target_desired_distance = 200.0
+target_desired_distance = 180.0
 script = ExtResource("1_kt04k")
-distance = 200.0

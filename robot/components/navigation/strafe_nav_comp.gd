@@ -9,7 +9,6 @@ extends Area2D
 func _direction() -> Vector2:
 	var pos = get_closest_enemy_position()
 	if pos == null:
-		
 		return Vector2.ZERO
 	
 	var dir_to: Vector2 = global_position.direction_to(pos)

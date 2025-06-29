@@ -35,13 +35,13 @@ tile_map_data = PackedByteArray("AADM/+L/AgABAAAAAADM/+P/AgABAAAAAADM/+T/AgABAAA
 tile_set = SubResource("TileSet_j6wqt")
 
 [node name="Server" parent="." instance=ExtResource("2_26hn1")]
-position = Vector2(-555, -96)
+position = Vector2(734, 1012)
 
 [node name="TeamComp" parent="Server" instance=ExtResource("3_26hn1")]
 override = true
 
 [node name="Server2" parent="." instance=ExtResource("2_26hn1")]
-position = Vector2(711, 812)
+position = Vector2(278, -492)
 
 [node name="TeamComp" parent="Server2" instance=ExtResource("3_26hn1")]
 override = true

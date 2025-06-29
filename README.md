@@ -25,8 +25,8 @@ Optional features will not be included in the MVP
 
 - [ ] Online (optional)
 	- [ ] Online hosted P2P. using UPNP? No anti-cheat, just syncing states. (just start with local P2P)
-	- [ ] Basic profiles
-		- [ ] Name
+	- [x] Basic profiles
+		- [x] Name
 		- [ ] PFP (optional)
 	- [ ] Match finder through some free server hosting
 		- [ ] Optional password protection

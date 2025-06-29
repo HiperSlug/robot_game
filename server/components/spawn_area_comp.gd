@@ -14,6 +14,9 @@ const SPAWN_CHOICE = preload("res://server/spawn/spawn_choice.tscn")
 var current_choice: Control
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if Network.team != server_team.team:
+		return
+	
 	if event.is_action_pressed("rmb"):
 		if not choosing:
 			choosing = true

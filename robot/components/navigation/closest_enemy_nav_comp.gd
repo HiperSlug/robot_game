@@ -7,12 +7,21 @@ class_name ClosestEnemyComp
 	Globals.Comp.TEAM,
 	CompGetter.FIRST,
 ).ready
-@onready var robot: CharacterBody2D = self.get_parent()
 
-@export var distance: float:
+
+@export var distance: float = 180:
 	set(val):
 		distance = val
 		target_desired_distance = distance
+
+const desired_leeway := 20.0
+
+var robot: Node:
+	get:
+		return get_parent()
+
+func _ready() -> void:
+	target_position = robot.global_position
 
 
 func _direction() -> Vector2:
@@ -20,9 +29,14 @@ func _direction() -> Vector2:
 	if closest_pos == null:
 		return Vector2.ZERO
 	
-	var inside_range: bool = closest_pos.distance_squared_to(robot.global_position) < distance ** 2
-	if is_target_reached() and inside_range:
-		return Vector2.ZERO
+	if is_target_reached():
+		var dist: float = closest_pos.distance_to(robot.global_position)
+		if dist < distance - desired_leeway:
+			return closest_pos.direction_to(robot.global_position)
+		elif dist > distance:
+			target_position = closest_pos
+		else:
+			return Vector2.ZERO
 	
 	target_position = closest_pos
 	

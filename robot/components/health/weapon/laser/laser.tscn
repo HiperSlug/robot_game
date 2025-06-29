@@ -5,19 +5,22 @@
 [ext_resource type="Texture2D" uid="uid://d4knhrarpntch" path="res://robot/components/health/weapon/laser/laser.png" id="3_wqesr"]
 [ext_resource type="Texture2D" uid="uid://dvau1xumn1jp2" path="res://robot/components/health/weapon/laser/gun.png" id="4_j1tl8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1tl8"]
-resource_local_to_scene = true
-size = Vector2(4, 200)
-
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_j1tl8"]
 properties/0/path = NodePath(".:length")
 properties/0/spawn = true
 properties/0/replication_mode = 1
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1tl8"]
+resource_local_to_scene = true
+size = Vector2(4, 200)
+
 [node name="LaserComp" type="Node2D" groups=["weapon_comp"]]
 script = ExtResource("1_rtor7")
 offset_y = -25.5
 metadata/_edit_horizontal_guides_ = [-34.0]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_j1tl8")
 
 [node name="Hitbox" parent="." instance=ExtResource("1_k3bq0")]
 dps = 20.0
@@ -43,6 +46,3 @@ region_rect = Rect2(0, 0, 4, 200)
 [node name="Gun" type="Sprite2D" parent="."]
 position = Vector2(0, -6)
 texture = ExtResource("4_j1tl8")
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_j1tl8")

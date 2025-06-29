@@ -14,6 +14,9 @@ const TEAM_NAMES := {
 func team_group(team: Team) -> StringName:
 	return TEAM_NAMES[team]
 
+func random_team() -> Team:
+	return Team.ONE if randi() % 2 == 0 else Team.TWO
+
 func enemy(team: Team) -> Team:
 	match team:
 		Team.ONE:

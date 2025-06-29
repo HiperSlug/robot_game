@@ -1,15 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddjaptg1tbkps"]
+[gd_scene load_steps=5 format=3 uid="uid://ddjaptg1tbkps"]
 
 [ext_resource type="Script" uid="uid://ca4hqlffy4xdb" path="res://world/controlled_camera.gd" id="1_mmdvd"]
 [ext_resource type="Script" uid="uid://chqh6sgj67n0f" path="res://world/visibility_manager.gd" id="2_h5o24"]
+[ext_resource type="Script" uid="uid://rxqntcp31gj7" path="res://world/team_rot.gd" id="2_mmdvd"]
 [ext_resource type="PackedScene" uid="uid://bm8hkybc0j55f" path="res://arenas/arena_1.tscn" id="4_mmdvd"]
 
 [node name="World" type="CanvasLayer" groups=["world"]]
 follow_viewport_enabled = true
 
 [node name="ControlledCamera" type="Camera2D" parent="."]
+ignore_rotation = false
 script = ExtResource("1_mmdvd")
 metadata/_custom_type_script = "uid://ca4hqlffy4xdb"
+
+[node name="TeamRot" type="Node" parent="ControlledCamera"]
+script = ExtResource("2_mmdvd")
+metadata/_custom_type_script = "uid://rxqntcp31gj7"
 
 [node name="VisibilityManager" type="Polygon2D" parent="." groups=["visibility_manager"]]
 script = ExtResource("2_h5o24")
